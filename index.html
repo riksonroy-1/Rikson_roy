@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en" data-theme="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rikson Roy — Portfolio</title>
+  <meta name="description" content="Rikson Roy — photography & projects" />
+
+  <style>
+    /* --------------------------
+       Variables / Base
+       -------------------------- */
+    :root{
+      --bg: #ffffff;
+      --panel: #f6f8fb;
+      --muted: #263238;
+      --muted-2: #51606a;
+      --accent: #2563eb;
+      --accent-2: #7c9cff;
+      --card: #ffffff;
+      --glass: rgba(255,255,255,0.6);
+      --shadow: 0 10px 30px rgba(16,24,40,0.08);
+      --radius-lg: 14px;
+      --radius-md: 10px;
+      --speed: 360ms;
+      --blur: 8px;
+      --max-width: 1100px;
+      --nav-height: 68px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    [data-theme="dark"]{
+      --bg:#071026;
+      --panel:#071828;
+      --muted:#cbd5e1;
+      --muted-2:#94a3b8;
+      --accent:#60a5fa;
+      --accent-2:#8fbfff;
+      --card:#071827;
+      --glass: rgba(11,20,34,0.45);
+      --shadow: 0 12px 30px rgba(2,6,23,0.7);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),rgba(0,0,0,0.01));color:var(--muted);-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .container{max-width:var(--max-width);margin:0 auto;padding:20px}
+
+    /* --------------------------
+       Header / Nav
+       -------------------------- */
+    .site-header{
+      position:sticky;top:0;z-index:80;
+      backdrop-filter: blur(6px);
+      background:linear-gradient(180deg,var(--panel), rgba(0,0,0,0));
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      box-shadow: var(--shadow);
+    }
+    .nav-row{height:var(--nav-height);display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{font-weight:700;text-decoration:none;color:var(--muted);font-size:1.05rem;display:flex;align-items:center;gap:10px}
+    .logo-dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 3px 10px rgba(37,99,235,0.25)}
+    .main-nav{display:flex;align-items:center;gap:12px}
+    .main-nav a{
+      padding:8px 12px;border-radius:10px;text-decoration:none;color:var(--muted-2);font-weight:600;
+      transition:all 180ms ease;
+    }
+    .main-nav a.active{background:linear-gradient(90deg, rgba(37,99,235,0.12), rgba(124,156,255,0.06));color:var(--accent)}
+    .nav-actions{display:flex;align-items:center;gap:8px}
+    #theme-toggle{padding:8px;border-radius:10px;border:0;background:transparent;cursor:pointer;font-size:16px}
+
+    /* --------------------------
+       Layout / sections
+       -------------------------- */
+    main{min-height:calc(100vh - var(--nav-height));display:flex;align-items:center;justify-content:center}
+    .panel{width:100%;background:var(--card);border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow);overflow:hidden}
+    .layout{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start}
+    @media (max-width:980px){ .layout{grid-template-columns:1fr} .main-nav a{display:none} }
+
+    /* --------------------------
+       Hero (Home)
+       -------------------------- */
+    .hero{
+      padding:10px 6px;
+      display:flex;flex-direction:column;gap:18px;
+    }
+    .hero-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .hero-title{font-size:clamp(1.6rem,3vw,2.4rem);margin:0;font-weight:800;letter-spacing:-0.02em}
+    .hero-sub{color:var(--muted-2);margin-top:6px;font-weight:600}
+    .hero-cta{margin-top:16px;display:flex;gap:10px;align-items:center}
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;text-decoration:none;font-weight:700;
+      box-shadow: 0 8px 24px rgba(37,99,235,0.12);transform:translateY(0);transition:transform var(--speed) cubic-bezier(.2,.9,.3,1);
+    }
+    .btn:active{transform:translateY(1px)}
+    .btn.ghost{background:transparent;border:1px solid rgba(37,99,235,0.12);color:var(--accent)}
+
+    .hero-card{display:flex;gap:18px;align-items:center}
+    .profile-photo{width:150px;height:150px;border-radius:16px;overflow:hidden;flex-shrink:0;box-shadow:0 18px 40px rgba(16,24,40,0.06)}
+    .profile-photo img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1);transition:transform 420ms ease}
+    .profile-photo:hover img{transform:scale(1.04)}
+    .about-lines{color:var(--muted-2);line-height:1.5}
+
+    /* --------------------------
+       Right column cards
+       -------------------------- */
+    .right-stack{display:flex;flex-direction:column;gap:14px}
+    .small-card{background:var(--glass);padding:14px;border-radius:12px;backdrop-filter: blur(6px);border:1px solid rgba(0,0,0,0.03)}
+    .stats{display:flex;gap:10px;align-items:center}
+    .stat{flex:1;text-align:center}
+    .stat h4{margin:0;font-size:1.25rem}
+    .stat p{margin:4px 0 0;color:var(--muted-2);font-weight:600}
+
+    /* --------------------------
+       Gallery
+       -------------------------- */
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+    .gallery-grid img{width:100%;height:120px;object-fit:cover;border-radius:10px;cursor:pointer;transition:transform 240ms ease,box-shadow 240ms ease}
+    .gallery-grid img:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(2,6,23,0.12)}
+
+    /* --------------------------
+       Projects
+       -------------------------- */
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+    .project-card{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0));min-height:100px;display:flex;flex-direction:column;justify-content:space-between}
+    .project-card h3{margin:0;font-size:1.05rem}
+    .project-card p{margin:8px 0 0;color:var(--muted-2);font-size:0.95rem}
+
+    /* --------------------------
+       Contact
+       -------------------------- */
+    .contact-form{display:flex;flex-direction:column;gap:10px;max-width:600px}
+    .contact-form input,.contact-form textarea{padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);background:transparent;outline:none;color:var(--muted-2)}
+    .contact-form label{font-weight:600;color:var(--muted-2)}
+    .contact-meta{display:flex;flex-direction:column;gap:6px;color:var(--muted-2)}
+
+    /* --------------------------
+       Footer
+       -------------------------- */
+    .site-footer{padding:20px 0;text-align:center;color:var(--muted-2);font-size:0.95rem}
+
+    /* --------------------------
+       Lightbox modal
+       -------------------------- */
+    .lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);z-index:120;padding:20px}
+    .lightbox img{max-width:95%;max-height:85%;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,0.6)}
+    .lightbox-close{position:absolute;top:18px;right:18px;background:transparent;border:0;color:white;font-size:28px;cursor:pointer}
+
+    /* --------------------------
+       Animations
+       -------------------------- */
+    .fade-in{animation:fadeIn var(--speed) ease both}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    .slide-left{animation:slideLeft 460ms cubic-bezier(.2,.9,.3,1) both}
+    @keyframes slideLeft{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:translateX(0)}}
+
+    /* small helpers */
+    .muted{color:var(--muted-2)}
+    .gap{height:12px}
+    .center{display:flex;align-items:center;justify-content:center}
+    button, .btn{cursor:pointer}
+
+    /* ---- Custom background image ---- */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url('https://img.freepik.com/free-vector/gradient-world-science-day-background_52683-97461.jpg?semt=ais_hybrid&w=740&q=80') center/cover no-repeat;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="brand" href="#" data-route="home" id="brand">
+        <span class="logo-dot" aria-hidden="true"></span>
+        <span style="margin-left:6px">Rikson Roy</span>
+      </a>
+
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="#home" data-route="home" class="nav-link active">Home</a>
+        <a href="#gallery" data-route="gallery" class="nav-link">Gallery</a>
+        <a href="#projects" data-route="projects" class="nav-link">Projects</a>
+        <a href="#contact" data-route="contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="muted" href="https://www.instagram.com/_rikson_roy_?igsh=OXQzMnViYzF4aGRl" target="_blank" rel="noopener" aria-label="Instagram">_rikson_roy_
+</a>
+        <button id="theme-toggle" aria-label="Toggle theme">🌗</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main single-file app -->
+  <main class="container">
+    <div class="panel" role="main" aria-live="polite">
+
+      <!-- Home Section -->
+      <section id="page-home" class="page page--active fade-in">
+        <div class="layout">
+          <div>
+            <div class="hero">
+              <div class="hero-top">
+                <div>
+                  <h1 class="hero-title">Hi — I’m <span style="color:var(--accent); white-space: nowrap;">Rikson Roy</span></h1>
+                  <div class="hero-sub">Hello Wlecome to my profile.</div>
+                </div>
+                <div class="hero-cta">
+                  <a class="btn" data-route="projects" href="#projects">My works</a>
+                  <a class="btn ghost" data-route="gallery" href="#gallery">View photos</a>
+                </div>
+              </div>
+
+              <div class="gap"></div>
+
+              <div class="hero-card slide-left">
+                <div class="profile-photo" aria-hidden="false">
+                  <!-- Put your photo in the same folder named `your-photo.jpg` -->
+                  <img src="https://i.ibb.co/hPNf0Zb/Myphoto.jpg" alt="Profile photo of Rikson Roy">
+                </div>
+
+                <div>
+                  <p class="about-lines">Hi, I’m Rikson Roy, a Computer Science and Engineering student at SNGCE. I’m passionate about coding and love turning ideas into creative digital projects. When I’m not writing code, you’ll probably find me playing games or staying active on social media, exploring trends, and connecting with people who share my interests.
+I enjoy learning new technologies, experimenting with design, and continuously improving my skills to build something meaningful.</p>
+
+                  <div style="margin-top:12px" class="muted">
+                    <strong>Skills:</strong> HTML • CSS • JavaScript • Photography • Problem solving
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="right-stack">
+            <div class="small-card fade-in">
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <div>
+                  <div class="muted">Location</div>
+                  <div style="font-weight:700">India</div>
+                </div>
+                <div class="stats">
+                  <div class="stat">
+                    <h4>120+</h4>
+                    <p>Photos</p>
+                  </div>
+                  <div class="stat">
+                    <h4>10</h4>
+                    <p>Projects</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="small-card fade-in">
+              <div>
+                <div class="muted">Quick contact</div>
+                <div style="margin-top:8px;display:flex;flex-direction:column;gap:6px">
+                  <a class="btn" href="#contact" data-route="contact">Message me</a>
+                  <a class="btn ghost" href="mailto:your@email.com">Email</a>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Gallery Section -->
+      <section id="page-gallery" class="page" hidden>
+
+        <div class="gallery-grid" id="gallery">
+          <!-- 6 placeholders for gallery - replace with photos/p1.jpg ... p6.jpg -->
+          <img src="https://i.ibb.co/dwb6cWsR/file-00000000936061f8ab2c46de293cf427.png">
+          <img src="https://i.ibb.co/jvvvV3f7/IMG-20241224-203821-318.webp">
+          <img src="https://i.ibb.co/0jfRkHhL/IMG-20250622-221653.jpg">
+          <img src="https://i.ibb.co/kVKDGwRk/IMG20250530203850.jpg">
+          <img src="https://i.ibb.co/F4qhVgny/IMG20250827093634.jpg">
+          <img src="https://i.ibb.co/hFLy4fCv/IMG20250116004633.jpg">
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="page-projects" class="page" hidden>
+        <h2>Projects</h2>
+        <p class="muted">Projects will show up here — add your items later.</p>
+        <div style="height:12px"></div>
+
+        <div class="projects-grid">
+          <!-- Intentionally left blank for you to add later.
+               Sample card template to copy when you add projects:
+          <div class="project-card">
+            <h3>Project Title</h3>
+            <p>Short description of the project and tech used.</p>
+            <a class="muted" href="#" style="margin-top:10px">View on GitHub →</a>
+          </div>
+          -->
+        </div>
+
+        <div style="height:18px"></div>
+        <div class="muted">Tip: to add projects, copy the template above into this grid and replace text & links.</div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="page-contact" class="page" hidden>
+        <h2>Contact</h2>
+        <div class="contact-meta">
+          <div><strong>Email</strong>: <a href="mailto:your@email.com">riksonroy54@gmail.com</a></div>
+          <div><strong>Instagram</strong>: <a href="https://www.instagram.com/_rikson_roy_?igsh=OXQzMnViYzF4aGRl" target="_blank" rel="noopener">_rikson_roy_
+</a></div>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <form class="contact-form" action="mailto:your@email.com" method="post" enctype="text/plain">
+          <label>Name
+            <input name="name" type="text" required placeholder="Enter Your name">
+          </label>
+          <label>Email
+            <input name="email" type="email" required placeholder="Enter Your E-mail">
+          </label>
+          <label>Message
+            <textarea name="message" rows="6" required placeholder="Hello! Type your message here."></textarea>
+          </label>
+          <div style="display:flex;gap:10px;align-items:center;margin-top:6px">
+            <button class="btn" type="submit">Send</button>
+            <button class="btn ghost" type="reset">Reset</button>
+          </div>
+        </form>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Image preview">
+    <button id="lightbox-close" class="lightbox-close" aria-label="Close">✕</button>
+    <img id="lightbox-img" alt="Expanded photo" />
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>© <span id="year"></span> Rikson Roy</div>
+        <div class="muted">Built with care — single file portfolio</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Inline Script -->
+  <script>
+    // -- Setup year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // -- Theme toggle (persist)
+    const themeToggle = document.getElementById('theme-toggle');
+    const root = document.documentElement;
+    function setTheme(name){
+      root.setAttribute('data-theme', name);
+      try { localStorage.setItem('site-theme', name); } catch(e){}
+    }
+    const saved = localStorage.getItem('site-theme');
+    if(saved) setTheme(saved);
+
+    themeToggle.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme');
+      setTheme(current === 'dark' ? '' : 'dark');
+    });
+
+    // -- Simple SPA navigation (Option A)
+    const pages = ['home','gallery','projects','contact'];
+    const links = document.querySelectorAll('.nav-link');
+    const routeTo = (route, push=true) => {
+      // hide all pages
+      pages.forEach(p => {
+        const el = document.getElementById('page-' + p);
+        if(!el) return;
+        if(p === route){
+          el.hidden = false;
+          el.classList.add('fade-in');
+        } else {
+          el.hidden = true;
+          el.classList.remove('fade-in');
+        }
+      });
+      // active link
+      links.forEach(a => a.classList.toggle('active', a.dataset.route === route));
+      if(push) history.pushState({route}, '', '#' + route);
+      // scroll-to-top of panel for better UX
+      window.scrollTo({top:0, behavior:'instant'});
+    };
+
+    // initial route (from hash or default)
+    const initial = location.hash.replace('#','') || 'home';
+    if(pages.includes(initial)) routeTo(initial, false);
+    else routeTo('home', false);
+
+    // attach nav
+    document.querySelectorAll('[data-route]').forEach(el => {
+      el.addEventListener('click', e => {
+        const r = el.dataset.route;
+        if(r) { e.preventDefault(); routeTo(r); }
+      });
+    });
+
+    // back/forward support
+    window.addEventListener('popstate', e => {
+      const r = (e.state && e.state.route) || location.hash.replace('#','') || 'home';
+      if(pages.includes(r)) routeTo(r, false);
+    });
+
+    // -- Lightbox for gallery (delegation)
+    const gallery = document.getElementById('gallery');
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightbox-img');
+    const lbClose = document.getElementById('lightbox-close');
+
+    if(gallery){
+      gallery.addEventListener('click', (e) => {
+        const img = e.target.closest('img');
+        if(!img) return;
+        const src = img.dataset.full || img.src;
+        lbImg.src = src;
+        lightbox.style.display = 'flex';
+        lightbox.setAttribute('aria-hidden','false');
+      });
+      lbClose.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+        lightbox.setAttribute('aria-hidden','true');
+        lbImg.src = '';
+      });
+      lightbox.addEventListener('click', (e) => {
+        if(e.target === lightbox) lbClose.click();
+      });
+    }
+
+    // -- small accessibility: keyboard close lightbox
+    window.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape' && lightbox.style.display === 'flex') {
+        lbClose.click();
+      }
+    });
+
+    // -- graceful fallback for images not present: handled by onerror attributes in markup
+  </script>
+</body>
+</html>
