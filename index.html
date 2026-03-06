@@ -142,6 +142,16 @@
     .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
     .gallery-grid img{width:100%;height:120px;object-fit:cover;border-radius:10px;cursor:pointer;transition:transform 240ms ease,box-shadow 240ms ease}
     .gallery-grid img:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(2,6,23,0.12)}
+	.gallery-grid figure{
+	margin:0;
+	}
+
+	.gallery-grid figcaption{
+	font-size:13px;
+	color:var(--muted-2);
+	text-align:center;
+	margin-top:4px;
+	}
 
     /* --------------------------
        Projects
@@ -306,12 +316,35 @@ I enjoy learning new technologies, experimenting with design, and continuously i
 
         <div class="gallery-grid" id="gallery">
           <!-- 6 placeholders for gallery - replace with photos/p1.jpg ... p6.jpg -->
-          <img src="https://media.licdn.com/dms/image/v2/D4E22AQETGlbWKBI4Ig/feedshare-shrink_1280/B4EZp4p7BWGcAs-/0/1762960852388?e=1773878400&v=beta&t=_mQ0tKr55rK90mRAaVe88N9wKEid9NleLVIr2Rf3pTA" alt="Rikson Roy photo"/>
-          <img src="https://i.ibb.co/s961vKQn/rikson-and-niranjan.jpg" alt="Rikson Roy"/>
+		  <figure>
+          <img src="https://media.licdn.com/dms/image/v2/D4E22AQETGlbWKBI4Ig/feedshare-shrink_1280/B4EZp4p7BWGcAs-/0/1762960852388?e=1773878400&v=beta&t=_mQ0tKr55rK90mRAaVe88N9wKEid9NleLVIr2Rf3pTA" alt="Rikson Roy"/>
+		  <figcaption>Rikson Roy.</figcaption>
+		  </figure>
+
+		  <figure>
+          <img src="https://i.ibb.co/s961vKQn/rikson-and-niranjan.jpg" alt="Rikson Roy with Niranjan"/>
+		  <figcaption>Me with my friend Niranjan.</figcaption>
+		  </figure>
+			
+		  <figure>
           <img src="https://i.ibb.co/V0vtZ3pJ/Seminar-by-Rikson-Roy.jpg" alt="Rikson Roy seminar class"/>
+		  <figcaption>Rikson Roy presenting a seminar based on the topic 'Digital Privacy And Ethics'.</figcaption>
+		  </figure>
+
+		  <figure>
           <img src="https://i.ibb.co/yF9w3YWd/Debugging-First.jpg" alt="Rikson Roy Debugging First"/>
-          <img src="https://i.ibb.co/F4qhVgny/IMG20250827093634.jpg" alt="rikson Roy pic"/>
-          <img src="https://i.ibb.co/hFLy4fCv/IMG20250116004633.jpg" alt="Rikson Roy"/>
+		  <figcaption>First Prize on Debugging Competetion</figcaption>
+		  </figure>
+
+		  <figure>
+          <img src="https://i.ibb.co/F4qhVgny/IMG20250827093634.jpg" alt="Selfie on onam celebration"/>
+		  <figcaption>Selfie on Onam celebration</figcaption>
+		  </figure>
+
+		  <figure>
+          <img src="https://i.ibb.co/hFLy4fCv/IMG20250116004633.jpg" alt="With my friends"/>
+		  <figcaption>With my friends</figcaption>
+		  </figure>
         </div>
       </section>
 
@@ -510,6 +543,7 @@ I enjoy learning new technologies, experimenting with design, and continuously i
   </script>
 </body>
 </html>
+
 
 
 
