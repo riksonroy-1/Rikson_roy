@@ -692,6 +692,135 @@
       transform: translateY(-2px);
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
     }
+
+    /* =========================
+   MOBILE RESPONSIVE FIX
+   ========================= */
+    @media (max-width: 768px) {
+
+      /* Layout stack */
+      .layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      /* Hero section */
+      .hero-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-cta {
+        flex-wrap: wrap;
+      }
+
+      /* Profile card stack */
+      .hero-card {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .profile-photo {
+        width: 120px;
+        height: 120px;
+      }
+
+      /* Reduce padding */
+      .panel {
+        padding: 18px;
+      }
+
+      /* =========================
+     HEADER FIX (IMPORTANT)
+     ========================= */
+
+      .nav-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        padding: 10px 0;
+        gap: 6px;
+        text-align: center;
+      }
+
+      /* Brand (your name) */
+      .brand {
+        width: 100%;
+        justify-content: center;
+      }
+
+      /* Navigation links */
+      .main-nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .main-nav a {
+        display: inline-block !important;
+        font-size: 14px;
+        padding: 6px 10px;
+      }
+
+      /* Instagram + theme toggle */
+      .nav-actions {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+	.nav-actions a {
+  margin-left: auto;
+}
+
+
+      /* ========================= */
+
+      /* Social icons */
+      .social-links {
+        gap: 20px;
+        justify-content: center;
+      }
+
+      /* Resume box */
+      .resume-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      /* Gallery */
+      .gallery-grid img {
+        height: 100px;
+      }
+
+      /* Projects */
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* Contact form */
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+      }
+
+      /* Buttons */
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      /* Prevent horizontal scroll */
+      body {
+        overflow-x: hidden;
+      }
+    }
   </style>
 </head>
 
@@ -736,8 +865,7 @@
                   <div class="hero-sub">
                     <span id="typing"></span>
                     <p style="margin-top:8px;font-size:14px;color:var(--muted-2)">
-                      Code. Create. Innovate.
-		      CSE student driven by curiosity and passion for technology.
+                      Building modern web experiences with clean design & creative ideas 🚀
                     </p>
 
                   </div>
@@ -944,7 +1072,8 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div
+        style="display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;text-align:center;width:100%">
         <div>© <span id="year"></span> Rikson Roy</div>
       </div>
     </div>
