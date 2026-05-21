@@ -3,238 +3,526 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark light" />
   <title>Privacy Policy | Thankans Poojyam Vettu</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
   <style>
+    :root {
+      --page: #f5f7fb;
+      --panel: #ffffff;
+      --text: #172033;
+      --muted: #5e6b82;
+      --line: #dfe5ef;
+      --accent: #1677ff;
+      --accent-soft: #e8f1ff;
+      --good: #0f8f61;
+      --shadow: 0 18px 50px rgba(23, 32, 51, 0.12);
+    }
+
     * {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0f172a, #111827, #1e293b);
-      color: #e5e7eb;
-      min-height: 100vh;
-      padding: 40px 20px;
-      line-height: 1.8;
-    }
-
-    .container {
-      max-width: 950px;
-      margin: auto;
-      background: rgba(17, 24, 39, 0.92);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 24px;
-      padding: 50px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.45);
-      backdrop-filter: blur(12px);
-    }
-
-    .top-badge {
-      display: inline-block;
-      background: rgba(99, 102, 241, 0.18);
-      color: #a5b4fc;
-      border: 1px solid rgba(99, 102, 241, 0.4);
-      padding: 8px 16px;
-      border-radius: 999px;
-      font-size: 14px;
-      margin-bottom: 20px;
-      font-weight: 500;
-    }
-
-    h1 {
-      font-size: 48px;
-      font-weight: 700;
-      margin-bottom: 14px;
-      color: white;
-      letter-spacing: -1px;
-    }
-
-    .subtitle {
-      color: #9ca3af;
-      font-size: 18px;
-      margin-bottom: 35px;
-    }
-
-    .updated {
-      background: rgba(255,255,255,0.04);
-      border-left: 4px solid #6366f1;
-      padding: 16px 20px;
-      border-radius: 14px;
-      margin-bottom: 40px;
-      color: #d1d5db;
-    }
-
-    section {
-      margin-bottom: 35px;
-      padding: 28px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.05);
-      transition: 0.3s ease;
-    }
-
-    section:hover {
-      transform: translateY(-2px);
-      border-color: rgba(99,102,241,0.4);
-    }
-
-    h2 {
-      font-size: 24px;
-      margin-bottom: 14px;
-      color: white;
-    }
-
-    p {
-      color: #d1d5db;
-      margin-bottom: 12px;
-    }
-
-    ul {
-      padding-left: 22px;
-      margin-top: 12px;
-    }
-
-    li {
-      margin-bottom: 10px;
-      color: #d1d5db;
-    }
-
-    .footer {
-      margin-top: 40px;
-      text-align: center;
-      color: #9ca3af;
-      font-size: 14px;
-    }
-
-    .contact-box {
-      background: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(59,130,246,0.1));
-      border: 1px solid rgba(99,102,241,0.35);
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        linear-gradient(180deg, rgba(22, 119, 255, 0.08), transparent 320px),
+        var(--page);
+      line-height: 1.65;
     }
 
     a {
-      color: #a5b4fc;
+      color: var(--accent);
       text-decoration: none;
     }
 
-    a:hover {
+    a:hover,
+    a:focus {
       text-decoration: underline;
     }
 
-    @media (max-width: 768px) {
-      .container {
-        padding: 28px;
+    .page {
+      width: min(100% - 32px, 1040px);
+      margin: 0 auto;
+      padding: 42px 0;
+    }
+
+    .document {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    header {
+      padding: 44px 48px 34px;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(22, 119, 255, 0.13), transparent 34%),
+        linear-gradient(180deg, #ffffff, #f9fbff);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #0d55b3;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 760px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .meta-card {
+      min-height: 82px;
+      padding: 15px 16px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #ffffff;
+    }
+
+    .meta-card strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 13px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    main {
+      padding: 14px 48px 44px;
+    }
+
+    section {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 24px;
+      line-height: 1.25;
+    }
+
+    h3 {
+      margin: 24px 0 8px;
+      font-size: 18px;
+    }
+
+    p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 22px;
+      color: var(--muted);
+    }
+
+    li {
+      margin-bottom: 9px;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .summary-item {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fbfcff;
+    }
+
+    .summary-item strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .notice {
+      margin: 18px 0 0;
+      padding: 18px 20px;
+      border: 1px solid rgba(22, 119, 255, 0.25);
+      border-left: 4px solid var(--accent);
+      border-radius: 12px;
+      background: var(--accent-soft);
+      color: #214168;
+    }
+
+    .notice p {
+      color: #214168;
+      margin: 0;
+    }
+
+    .data-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .data-item {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fbfcff;
+    }
+
+    .data-item strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .contact-box {
+      padding: 22px;
+      border-radius: 14px;
+      background: #f4f9ff;
+      border: 1px solid rgba(22, 119, 255, 0.24);
+    }
+
+    footer {
+      padding: 22px 48px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      background: #fbfcff;
+      font-size: 14px;
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        width: min(100% - 20px, 1040px);
+        padding: 16px 0;
       }
 
-      h1 {
-        font-size: 34px;
+      header,
+      main,
+      footer {
+        padding-left: 22px;
+        padding-right: 22px;
       }
 
-      section {
-        padding: 22px;
+      header {
+        padding-top: 30px;
+      }
+
+      .meta-grid,
+      .summary {
+        grid-template-columns: 1fr;
+      }
+
+      .document {
+        border-radius: 14px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+      }
+
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+
+      .document {
+        border: 0;
+        box-shadow: none;
+      }
+
+      a {
+        color: #000000;
+        text-decoration: underline;
       }
     }
   </style>
 </head>
 <body>
+  <div class="page">
+    <article class="document">
+      <header>
+        <div class="badge">Official Privacy Policy</div>
+        <h1>Privacy Policy</h1>
+        <p class="subtitle">
+          This Privacy Policy explains how Thankans Poojyam Vettu handles information when you use the game, including offline play, online multiplayer rooms, local progress, and advertising features.
+        </p>
 
-  <div class="container">
+        <div class="meta-grid" aria-label="Policy details">
+          <div class="meta-card">
+            <strong>App</strong>
+            Thankans Poojyam Vettu
+          </div>
+          <div class="meta-card">
+            <strong>Developer</strong>
+            Rikson Roy
+          </div>
+          <div class="meta-card">
+            <strong>Last Updated</strong>
+            May 21, 2026
+          </div>
+        </div>
+      </header>
 
-    <div class="top-badge">Official Privacy Policy</div>
+      <main>
+        <section>
+          <h2>1. Overview</h2>
+          <p>
+            Thankans Poojyam Vettu is a dots-and-boxes style game with offline play, optional AI gameplay, saved offline progress, and optional online room-based multiplayer. We do not require you to create an account, sign in, or provide a real name to play.
+          </p>
+          <p>
+            This policy is intended to be clear and practical. It describes what the app may collect or process, why it is needed, who may receive it, how long it is kept, and how you can contact us.
+          </p>
+          <div class="summary">
+            <div class="summary-item">
+              <strong>No account required</strong>
+              You can play without registration, login, email address, phone number, or payment information.
+            </div>
+            <div class="summary-item">
+              <strong>Local progress stays on your device</strong>
+              Offline settings, progress, and resume data are stored in app/browser storage on your device unless you clear them.
+            </div>
+            <div class="summary-item">
+              <strong>Online rooms need network data</strong>
+              Online multiplayer sends room, nickname, gameplay, and connection information to the game server so rooms can work.
+            </div>
+            <div class="summary-item">
+              <strong>Ads may use third-party data</strong>
+              If ads are enabled in the Google Play version, the advertising provider may collect data as described below.
+            </div>
+          </div>
+        </section>
 
-    <h1>Privacy Policy</h1>
+        <section>
+          <h2>2. Information We Collect or Process</h2>
+          <p>
+            The app collects or processes only the information needed for gameplay, online multiplayer, saved progress, app stability, and advertising where enabled.
+          </p>
 
-    <p class="subtitle">
-      Thankans Poojyam Vettu
-    </p>
+          <div class="data-list">
+            <div class="data-item">
+              <strong>Player names and nicknames</strong>
+              You may enter a display name for offline or online gameplay. You should not enter your real name if you do not want it used in the game. In online rooms, your display name may be visible to other players in the same room.
+            </div>
 
-    <div class="updated">
-      <strong>Last Updated:</strong> May 12, 2026
-    </div>
+            <div class="data-item">
+              <strong>Online room information</strong>
+              When you create or join an online room, the app processes the room code, room password, selected room settings, player list, host status, and connection status. Room passwords are used only to help protect the room and should not be reused from any personal account.
+            </div>
 
-    <section>
-      <h2>Introduction</h2>
-      <p>
-        Thank you for playing Thankans Poojyam Vettu. Your privacy is important to us.
-        This Privacy Policy explains what information may be collected while using the game
-        and how that information is used.
-      </p>
-    </section>
+            <div class="data-item">
+              <strong>Gameplay data</strong>
+              The app may process moves, scores, current turn, board size, timer settings, AI settings, match results, and saved progress. Offline gameplay data is stored locally. Online gameplay data is sent to the game server so all players in the room see the same match state.
+            </div>
 
-    <section>
-      <h2>Information We Collect</h2>
-      <p>
-        The game may collect limited information required for gameplay functionality,
-        including:
-      </p>
+            <div class="data-item">
+              <strong>Technical and network data</strong>
+              Online play and hosting services may automatically process technical data such as IP address, approximate network location derived from IP address, browser or device information, operating system, connection events, socket/session identifiers, logs, and diagnostics. This is used to connect players, keep the service stable, prevent abuse, and troubleshoot errors.
+            </div>
 
-      <ul>
-        <li>Player display names</li>
-        <li>Multiplayer room codes and passwords</li>
-        <li>Technical connection details such as IP address and browser/device information</li>
-        <li>Game preferences stored locally on your device</li>
-      </ul>
-    </section>
+            <div class="data-item">
+              <strong>Settings and local storage</strong>
+              The app stores settings such as theme, sound preferences, music volume, offline progress, player progress names, scores, win counts, best scores, last played dates, and active game resume data on your device using local app/browser storage.
+            </div>
 
-    <section>
-      <h2>How Information Is Used</h2>
-      <p>
-        The collected information is used only for:
-      </p>
+            <div class="data-item">
+              <strong>Advertising data, if ads are enabled</strong>
+              The Google Play build may show banner, interstitial, or similar ads through a native advertising SDK such as Google Mobile Ads or AdMob. Advertising providers may collect or receive data such as IP address, advertising identifier, app interactions, ad views, device information, diagnostics, crash or performance data, and approximate location derived from IP address for ad delivery, measurement, fraud prevention, security, and compliance.
+            </div>
 
-      <ul>
-        <li>Providing multiplayer gameplay features</li>
-        <li>Saving game settings and preferences</li>
-        <li>Maintaining stable online connectivity</li>
-      </ul>
-    </section>
+            <div class="data-item">
+              <strong>Messages you send to us</strong>
+              If you contact us by email, we will receive your email address and the contents of your message so we can respond.
+            </div>
+          </div>
 
-    <section>
-      <h2>Data Sharing</h2>
-      <p>
-        We do not sell, rent, or share your personal information with third parties.
-      </p>
-    </section>
+          <div class="notice">
+            <p>
+              We do not use the game to access your contacts, precise GPS location, camera, microphone, SMS, phone call history, calendar, photos, videos, health data, or payment card information.
+            </p>
+          </div>
+        </section>
 
-    <section>
-      <h2>Advertising and Analytics</h2>
-      <p>
-        Thankans Poojyam Vettu does not use advertising SDKs, tracking systems,
-        or analytics services.
-      </p>
-    </section>
+        <section>
+          <h2>3. How We Use Information</h2>
+          <p>We use information for the following purposes:</p>
+          <ul>
+            <li>To provide offline gameplay, AI gameplay, saved settings, and saved progress.</li>
+            <li>To create, join, protect, and run online multiplayer rooms.</li>
+            <li>To synchronize online moves, scores, turns, timers, and match results between players.</li>
+            <li>To maintain, debug, secure, and improve the game and online service.</li>
+            <li>To show ads and measure ad performance if advertising is enabled.</li>
+            <li>To respond to support, privacy, or deletion requests you send to us.</li>
+            <li>To comply with legal obligations and enforce our rights where necessary.</li>
+          </ul>
+        </section>
 
-    <section>
-      <h2>Children's Privacy</h2>
-      <p>
-        The game is not intended to knowingly collect personal information from children.
-        If you believe a child has provided personal information, please contact us.
-      </p>
-    </section>
+        <section>
+          <h2>4. Offline Storage on Your Device</h2>
+          <p>
+            Offline progress and settings are stored locally on your device. This can include your chosen player name, progress profile, match progress, board size, difficulty level, scores, win counts, best scores, last played dates, theme, and sound preferences.
+          </p>
+          <p>
+            We do not receive this local offline data unless you use an online feature that sends selected gameplay or display information to the multiplayer server, or unless you choose to send us information for support.
+          </p>
+        </section>
 
-    <section class="contact-box">
-      <h2>Contact Us</h2>
-      <p>
-        If you have any questions regarding this Privacy Policy, you can contact us at:
-      </p>
+        <section>
+          <h2>5. Online Multiplayer</h2>
+          <p>
+            Online multiplayer requires an internet connection and uses a game server to create and manage rooms. The app connects to the online service using Socket.IO or similar real-time networking technology.
+          </p>
+          <p>
+            When you use online mode, the server may process your display name, room code, room password, room settings, game moves, scores, current turn, timer information, connection status, socket/session identifiers, and IP address. This information is used to operate the online match and is visible only as needed for players in the same room and for service operation.
+          </p>
+          <p>
+            The online service may be hosted by a third-party cloud hosting provider. Hosting providers may process logs and technical data to deliver, secure, monitor, and troubleshoot the service.
+          </p>
+        </section>
 
-      <p>
-        <strong>Email:</strong>
-        <a href="mailto:riksonroy54@gmail.com.com">riksonroy54@gmail.com</a>
-      </p>
-    </section>
+        <section>
+          <h2>6. Advertising and Third-Party Services</h2>
+          <p>
+            The app may display advertisements in the Google Play version. The game code includes calls for native banner and interstitial ads. If the Android app wrapper uses Google Mobile Ads, AdMob, or another advertising provider, that provider may collect and share data according to its own policies and the settings chosen by the user and developer.
+          </p>
+          <p>
+            Advertising data may include IP address, device identifiers such as the Android advertising ID where available, app interactions, ad views, diagnostics, and approximate location inferred from IP address. Advertising providers use this information for ad delivery, measurement, fraud prevention, security, analytics, and compliance.
+          </p>
+          <p>
+            You can learn more about Google's advertising practices at <a href="https://policies.google.com/technologies/ads" rel="noopener">Google Advertising Policies</a> and Google's privacy practices at <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a>.
+          </p>
+        </section>
 
-    <div class="footer">
-      © 2026 Thankans Poojyam Vettu. All Rights Reserved.
-    </div>
+        <section>
+          <h2>7. Sharing of Information</h2>
+          <p>
+            We do not sell, rent, or trade your personal information. We may share or allow processing of information only in the following situations:
+          </p>
+          <ul>
+            <li>With the online game server and hosting providers to provide online multiplayer.</li>
+            <li>With advertising providers if ads are enabled in the app.</li>
+            <li>With platform and service providers, such as Google Play and Android services, as needed for app distribution, security, ads, and platform functionality.</li>
+            <li>With other players in the same online room, limited to display names, gameplay state, scores, and room-related status.</li>
+            <li>When required by law, legal process, security needs, or to protect our rights, users, or the public.</li>
+          </ul>
+        </section>
 
+        <section>
+          <h2>8. Data Retention and Deletion</h2>
+          <p>
+            Local settings, offline progress, and active game resume data remain on your device until you delete them, clear app storage, clear browser/app data, reset progress where available, or uninstall the app.
+          </p>
+          <p>
+            Online room data is used to operate live rooms and matches. We aim to keep room and gameplay information only as long as needed for online gameplay, maintenance, security, troubleshooting, and legal compliance. Hosting providers may retain technical logs for a limited period according to their own operations and policies.
+          </p>
+          <p>
+            Because the app does not create user accounts, there is no account deletion process. To request deletion of information that may be associated with online multiplayer or a support email, contact us using the email address below and include enough detail for us to identify the relevant data, such as room code, approximate date, and display name.
+          </p>
+        </section>
+
+        <section>
+          <h2>9. Your Choices and Controls</h2>
+          <ul>
+            <li>You can use a nickname instead of your real name.</li>
+            <li>You can avoid online multiplayer if you do not want room or connection information processed by the online server.</li>
+            <li>You can delete local data by clearing the app's storage/data, clearing browser storage for the app, resetting progress where available, or uninstalling the app.</li>
+            <li>You can manage Android advertising ID settings and ad personalization controls in your device or Google settings where available.</li>
+            <li>You can contact us to request access, correction, deletion, or more information about data we may hold.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>10. Security</h2>
+          <p>
+            We use reasonable technical and organizational measures to protect information, including using HTTPS/TLS for network connections where supported and limiting data use to the purposes described in this policy. However, no internet transmission, app, server, or storage system can be guaranteed to be completely secure.
+          </p>
+        </section>
+
+        <section>
+          <h2>11. Children's Privacy</h2>
+          <p>
+            The app is intended for general entertainment and is not specifically directed to children under 13 or the minimum age required by local law. We do not knowingly collect personal information from children.
+          </p>
+          <p>
+            Children should not enter real names, personal contact details, or personal passwords in the game. If you are a parent or guardian and believe a child has provided personal information through the app, please contact us and we will take reasonable steps to delete it where possible.
+          </p>
+          <p>
+            If the app is listed on Google Play as targeted to children or families, the app, ads, SDKs, and data practices must comply with applicable children's privacy laws and Google Play Families policies.
+          </p>
+        </section>
+
+        <section>
+          <h2>12. International Users and Legal Rights</h2>
+          <p>
+            Depending on where you live, you may have privacy rights such as the right to request access, correction, deletion, restriction, objection, portability, or withdrawal of consent. To exercise these rights, contact us using the email address below.
+          </p>
+          <p>
+            For users in regions that require a legal basis for processing, we process information to provide the app and online multiplayer, based on our legitimate interests in operating and securing the game, based on consent where required for advertising or similar technologies, and as needed to comply with legal obligations.
+          </p>
+        </section>
+
+        <section>
+          <h2>13. Changes to This Privacy Policy</h2>
+          <p>
+            We may update this Privacy Policy from time to time. When we make changes, we will update the "Last Updated" date above and publish the updated policy in the app or at the policy page used for the Google Play listing.
+          </p>
+        </section>
+
+        <section>
+          <h2>14. Contact Us</h2>
+          <div class="contact-box">
+            <p>
+              If you have questions, requests, or concerns about this Privacy Policy or the app's data practices, contact:
+            </p>
+            <p>
+              <strong>Rikson Roy</strong><br />
+              Email: <a href="mailto:riksonroy54@gmail.com">riksonroy54@gmail.com</a>
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        &copy; 2026 Rikson Roy. Thankans Poojyam Vettu. All rights reserved.
+      </footer>
+    </article>
   </div>
-
 </body>
 </html>
