@@ -296,7 +296,7 @@
           </div>
           <div class="meta-card">
             <strong>Last Updated</strong>
-            May 24, 2026
+            May 27, 2026
           </div>
         </div>
       </header>
@@ -359,12 +359,12 @@
 
             <div class="data-item">
               <strong>Settings and local storage</strong>
-              The app stores settings such as theme, sound preferences, music volume, offline progress, player progress names, scores, win counts, best scores, last played dates, and active game resume data on your device using local app/browser storage.
+              The app stores settings such as theme, sound preferences, music volume, coin balance, unlocked board themes, daily reward timing, offline progress, player progress names, scores, win counts, best scores, last played dates, and active game resume data on your device using local app/browser storage.
             </div>
 
             <div class="data-item">
               <strong>Advertising data, if ads are enabled</strong>
-              The Google Play build may show banner, interstitial, rewarded, or similar ads through a native advertising SDK such as Google Mobile Ads or AdMob. Rewarded ads may be used to grant in-game coins after a completed ad view is confirmed. Advertising providers may collect or receive data such as IP address, advertising identifier, app interactions, ad views, rewarded ad completion status, device information, diagnostics, crash or performance data, and approximate location derived from IP address for ad delivery, measurement, fraud prevention, security, and compliance.
+              The Google Play build may show banner, interstitial, rewarded, or similar ads through a native advertising SDK such as Google Mobile Ads or AdMob. Rewarded ads may be used to grant in-game coins after a completed ad view is confirmed. Advertising providers may collect or receive data such as IP address, Android advertising ID or other device/account identifiers where available, app interactions such as app launches, taps and video views, ad views, rewarded ad completion status, device information, diagnostics, crash or performance data, and approximate location derived from IP address for ad delivery, measurement, analytics, fraud prevention, security, and compliance.
             </div>
 
             <div class="data-item">
@@ -400,6 +400,9 @@
             Offline progress and settings are stored locally on your device. This can include your chosen player name, progress profile, match progress, board size, difficulty level, scores, win counts, best scores, last played dates, theme, and sound preferences.
           </p>
           <p>
+            Local storage may also include virtual coin balance, unlocked board themes, daily reward state, and active offline game resume data. These items are used only to provide gameplay features on your device.
+          </p>
+          <p>
             We do not receive this local offline data unless you use an online feature that sends selected gameplay or display information to the multiplayer server, or unless you choose to send us information for support.
           </p>
         </section>
@@ -413,7 +416,10 @@
             When you use online mode, the server may process your display name, room code, room password, room settings, game moves, scores, current turn, timer information, connection status, socket/session identifiers, and IP address. This information is used to operate the online match and is visible only as needed for players in the same room and for service operation.
           </p>
           <p>
-            The online service may be hosted by a third-party cloud hosting provider. Hosting providers may process logs and technical data to deliver, secure, monitor, and troubleshoot the service.
+            The online service is currently hosted on Render using the app's online server URL. Render or other hosting providers we use may process logs and technical data to deliver, secure, monitor, and troubleshoot the service.
+          </p>
+          <p>
+            Room passwords are used only to help protect private rooms. The server stores a hashed version of a room password while the room is active, not the plain text password. Do not reuse a personal account password as a room password.
           </p>
         </section>
 
@@ -424,6 +430,9 @@
           </p>
           <p>
             Advertising data may include IP address, device identifiers such as the Android advertising ID where available, app interactions, ad views, diagnostics, and approximate location inferred from IP address. Advertising providers use this information for ad delivery, measurement, fraud prevention, security, analytics, and compliance.
+          </p>
+          <p>
+            Google states that data collected by the Google Mobile Ads SDK is encrypted in transit using Transport Layer Security (TLS). Advertising identifiers can usually be reset or deleted from Android or Google settings, depending on your device.
           </p>
           <p>
             Where required by law or platform rules, the app or advertising SDK may ask for consent before showing personalized ads or using certain advertising technologies.
