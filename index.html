@@ -1274,7 +1274,6 @@
             </div>
 
             <div class="button-row">
-              <!-- Replace this search URL with the exact Play Store listing URL when available. -->
               <a class="btn btn-primary"
                 href="https://play.google.com/store/apps/details?id=com.rick.thankanspoojyamvettu"
                 target="_blank" rel="noopener">
@@ -1518,7 +1517,6 @@
       try {
         localStorage.setItem("site-theme", theme);
       } catch (error) {
-        // Theme persistence is optional.
       }
     }
 
@@ -1600,7 +1598,6 @@
     });
   </script>
 
-  <!-- Chatbase AI Chatbot. Preserved from the original site. -->
   <script>
     (function () { if (!window.chatbase || window.chatbase("getState") !== "initialized") { window.chatbase = (...arguments) => { if (!window.chatbase.q) { window.chatbase.q = [] } window.chatbase.q.push(arguments) }; window.chatbase = new Proxy(window.chatbase, { get(target, prop) { if (prop === "q") { return target.q } return (...args) => target(prop, ...args) } }) } const onLoad = function () { const script = document.createElement("script"); script.src = "https://www.chatbase.co/embed.min.js"; script.id = "sI89KOr8_E0kSu8G39zm5"; script.domain = "www.chatbase.co"; document.body.appendChild(script) }; if (document.readyState === "complete") { onLoad() } else { window.addEventListener("load", onLoad) } })();
   </script>
