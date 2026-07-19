@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="description" content="Terms and Conditions for Thankans SOS - A fun multiplayer SOS strategy game by Rikson.">
+    <title>Terms & Conditions — Thankans SOS</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Caveat:wght@700&display=swap');
+
+        :root {
+            --bg-primary: #0f0f1e;
+            --bg-secondary: #161630;
+            --bg-card: rgba(255, 255, 255, 0.04);
+            --bg-card-hover: rgba(255, 255, 255, 0.07);
+            --border-subtle: rgba(255, 255, 255, 0.06);
+            --border-accent: rgba(100, 224, 176, 0.2);
+            --text-primary: #f0ece4;
+            --text-secondary: rgba(240, 236, 228, 0.65);
+            --text-muted: rgba(240, 236, 228, 0.4);
+            --accent-green: #64e0b0;
+            --accent-gold: #ffcf5c;
+            --accent-coral: #ff8c62;
+            --accent-blue: #58c9f0;
+            --accent-purple: #a584f4;
+            --gradient-brand: linear-gradient(135deg, #64e0b0, #58c9f0, #a584f4);
+            --gradient-warm: linear-gradient(135deg, #ff8c62, #ffcf5c);
+            --shadow-glow: 0 0 60px rgba(100, 224, 176, 0.08);
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* === BACKGROUND EFFECTS === */
+        .bg-effects {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .bg-effects::before {
+            content: "";
+            position: absolute;
+            top: -20%;
+            left: -10%;
+            width: 60%;
+            height: 60%;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(100, 224, 176, 0.07), transparent 60%);
+            filter: blur(80px);
+            animation: floatOrb1 20s ease-in-out infinite;
+        }
+
+        .bg-effects::after {
+            content: "";
+            position: absolute;
+            bottom: -15%;
+            right: -10%;
+            width: 55%;
+            height: 55%;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(165, 132, 244, 0.06), transparent 60%);
+            filter: blur(80px);
+            animation: floatOrb2 25s ease-in-out infinite;
+        }
+
+        .bg-grid {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background:
+                linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px) 0 0 / 80px 80px,
+                linear-gradient(0deg, rgba(255,255,255,0.015) 1px, transparent 1px) 0 0 / 80px 80px;
+            mask-image: radial-gradient(ellipse at 50% 30%, black 20%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse at 50% 30%, black 20%, transparent 70%);
+        }
+
+        @keyframes floatOrb1 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(5%, 8%) scale(1.05); }
+            66% { transform: translate(-3%, 4%) scale(0.97); }
+        }
+
+        @keyframes floatOrb2 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(-6%, -5%) scale(1.03); }
+            66% { transform: translate(4%, -8%) scale(0.96); }
+        }
+
+        /* === MAIN LAYOUT === */
+        .page-wrapper {
+            position: relative;
+            z-index: 1;
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* === HEADER === */
+        .page-header {
+            padding: 60px 0 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 18px 7px 12px;
+            border-radius: 999px;
+            background: rgba(100, 224, 176, 0.08);
+            border: 1px solid rgba(100, 224, 176, 0.15);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent-green);
+            letter-spacing: 0.02em;
+            margin-bottom: 24px;
+            animation: fadeInDown 0.6s ease both;
+        }
+
+        .header-badge svg {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        .page-title {
+            font-size: clamp(32px, 6vw, 48px);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            animation: fadeInDown 0.6s ease 0.1s both;
+        }
+
+        .page-title .highlight {
+            background: var(--gradient-brand);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            font-size: 15px;
+            color: var(--text-secondary);
+            max-width: 520px;
+            margin: 0 auto 12px;
+            animation: fadeInDown 0.6s ease 0.2s both;
+        }
+
+        .effective-date {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 500;
+            animation: fadeInDown 0.6s ease 0.3s both;
+        }
+
+        .effective-date::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent-green);
+            box-shadow: 0 0 8px var(--accent-green);
+        }
+
+        /* === NAVIGATION / TOC === */
+        .toc-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-xl);
+            padding: 28px 32px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            animation: fadeInUp 0.6s ease 0.4s both;
+        }
+
+        .toc-title {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 6px;
+        }
+
+        .toc-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .toc-link:hover {
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text-primary);
+        }
+
+        .toc-num {
+            display: grid;
+            place-items: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 7px;
+            background: rgba(100, 224, 176, 0.08);
+            border: 1px solid rgba(100, 224, 176, 0.12);
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--accent-green);
+            flex-shrink: 0;
+        }
+
+        /* === SECTIONS === */
+        .section {
+            margin-bottom: 32px;
+            animation: fadeInUp 0.5s ease both;
+        }
+
+        .section-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-xl);
+            padding: 32px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(100, 224, 176, 0.15), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .section-card:hover {
+            border-color: var(--border-accent);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .section-card:hover::before {
+            opacity: 1;
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 800;
+            margin-bottom: 14px;
+            color: #fff;
+        }
+
+        .section-number.green { background: linear-gradient(135deg, #1d936e, #64e0b0); }
+        .section-number.gold { background: linear-gradient(135deg, #c97938, #ffcf5c); }
+        .section-number.coral { background: linear-gradient(135deg, #c93454, #ff8c62); }
+        .section-number.blue { background: linear-gradient(135deg, #2180a0, #58c9f0); }
+        .section-number.purple { background: linear-gradient(135deg, #6a4bc9, #a584f4); }
+
+        .section-heading {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .section-card p {
+            color: var(--text-secondary);
+            font-size: 14.5px;
+            margin-bottom: 14px;
+        }
+
+        .section-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-card ul,
+        .section-card ol {
+            color: var(--text-secondary);
+            font-size: 14.5px;
+            margin: 12px 0;
+            padding-left: 24px;
+        }
+
+        .section-card li {
+            margin-bottom: 8px;
+            padding-left: 4px;
+        }
+
+        .section-card li::marker {
+            color: var(--accent-green);
+        }
+
+        .section-card strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* === HIGHLIGHT BOX === */
+        .highlight-box {
+            background: rgba(100, 224, 176, 0.05);
+            border: 1px solid rgba(100, 224, 176, 0.12);
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            margin: 16px 0;
+            font-size: 14px;
+        }
+
+        .highlight-box.warning {
+            background: rgba(255, 207, 92, 0.05);
+            border-color: rgba(255, 207, 92, 0.15);
+        }
+
+        .highlight-box.important {
+            background: rgba(255, 140, 98, 0.05);
+            border-color: rgba(255, 140, 98, 0.15);
+        }
+
+        .highlight-box-title {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 8px;
+            color: var(--accent-green);
+        }
+
+        .highlight-box.warning .highlight-box-title {
+            color: var(--accent-gold);
+        }
+
+        .highlight-box.important .highlight-box-title {
+            color: var(--accent-coral);
+        }
+
+        /* === FOOTER === */
+        .page-footer {
+            padding: 48px 0 40px;
+            text-align: center;
+            border-top: 1px solid var(--border-subtle);
+            margin-top: 20px;
+        }
+
+        .footer-logo {
+            font-family: 'Caveat', cursive;
+            font-size: 28px;
+            font-weight: 700;
+            background: var(--gradient-brand);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 16px;
+        }
+
+        .footer-links a {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-green);
+        }
+
+        /* === BACK TO TOP === */
+        .back-to-top {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            background: rgba(100, 224, 176, 0.12);
+            border: 1px solid rgba(100, 224, 176, 0.2);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            color: var(--accent-green);
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(12px);
+            transition: all 0.3s ease;
+            z-index: 100;
+            text-decoration: none;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: rgba(100, 224, 176, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* === ANIMATIONS === */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 640px) {
+            .page-wrapper {
+                padding: 0 16px;
+            }
+            .page-header {
+                padding: 40px 0 28px;
+            }
+            .toc-card {
+                padding: 20px;
+            }
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+            .section-card {
+                padding: 24px 20px;
+            }
+            .back-to-top {
+                bottom: 20px;
+                right: 16px;
+            }
+        }
+
+        /* Scroll animation observer */
+        .section[data-animate] {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .section[data-animate].in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-effects"></div>
+    <div class="bg-grid"></div>
+
+    <div class="page-wrapper">
+
+        <!-- HEADER -->
+        <header class="page-header" id="top">
+            <div class="header-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Thankans SOS — Legal
+            </div>
+            <h1 class="page-title">Terms &amp; <span class="highlight">Conditions</span></h1>
+            <p class="page-subtitle">Please read these terms carefully before using Thankans SOS. By playing the game, you agree to be bound by these terms.</p>
+            <span class="effective-date">Effective Date: July 19, 2026</span>
+        </header>
+
+        <!-- TABLE OF CONTENTS -->
+        <nav class="toc-card" aria-label="Table of Contents">
+            <div class="toc-title">Quick Navigation</div>
+            <div class="toc-grid">
+                <a href="#acceptance" class="toc-link"><span class="toc-num">1</span> Acceptance of Terms</a>
+                <a href="#description" class="toc-link"><span class="toc-num">2</span> Game Description</a>
+                <a href="#eligibility" class="toc-link"><span class="toc-num">3</span> Eligibility</a>
+                <a href="#accounts" class="toc-link"><span class="toc-num">4</span> User Identity</a>
+                <a href="#gameplay" class="toc-link"><span class="toc-num">5</span> Gameplay Rules</a>
+                <a href="#virtual-currency" class="toc-link"><span class="toc-num">6</span> Virtual Currency</a>
+                <a href="#ads" class="toc-link"><span class="toc-num">7</span> Advertisements</a>
+                <a href="#online" class="toc-link"><span class="toc-num">8</span> Online Multiplayer</a>
+                <a href="#data" class="toc-link"><span class="toc-num">9</span> Data &amp; Storage</a>
+                <a href="#ip" class="toc-link"><span class="toc-num">10</span> Intellectual Property</a>
+                <a href="#conduct" class="toc-link"><span class="toc-num">11</span> User Conduct</a>
+                <a href="#disclaimer" class="toc-link"><span class="toc-num">12</span> Disclaimer</a>
+                <a href="#liability" class="toc-link"><span class="toc-num">13</span> Limitation of Liability</a>
+                <a href="#thirdparty" class="toc-link"><span class="toc-num">14</span> Third-Party Services</a>
+                <a href="#termination" class="toc-link"><span class="toc-num">15</span> Termination</a>
+                <a href="#changes" class="toc-link"><span class="toc-num">16</span> Changes to Terms</a>
+                <a href="#governing" class="toc-link"><span class="toc-num">17</span> Governing Law</a>
+                <a href="#contact" class="toc-link"><span class="toc-num">18</span> Contact Us</a>
+            </div>
+        </nav>
+
+        <!-- SECTIONS -->
+
+        <!-- 1. Acceptance of Terms -->
+        <section class="section" data-animate id="acceptance">
+            <div class="section-card">
+                <div class="section-number green">1</div>
+                <h2 class="section-heading">Acceptance of Terms</h2>
+                <p>By downloading, installing, accessing, or using <strong>Thankans SOS</strong> (the "Game"), you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions ("Terms"). If you do not agree to these Terms, please do not use the Game.</p>
+                <p>These Terms constitute a legally binding agreement between you ("User," "Player," or "you") and the developer ("Rikson," "we," "us," or "our") regarding your use of the Game.</p>
+            </div>
+        </section>
+
+        <!-- 2. Game Description -->
+        <section class="section" data-animate id="description">
+            <div class="section-card">
+                <div class="section-number blue">2</div>
+                <h2 class="section-heading">Game Description</h2>
+                <p>Thankans SOS is a strategy-based <strong>SOS letter-placement game</strong> where players take turns placing "S" or "O" on a grid to form "SOS" sequences. The game includes:</p>
+                <ul>
+                    <li><strong>Offline / Local Mode</strong> — Play with 2–6 players on the same device, with customizable grid sizes (4×4 up to 15×10).</li>
+                    <li><strong>AI Mode</strong> — Challenge "Thankan Chettan," an AI opponent with three difficulty levels: Cool, Scn, and Pro Max.</li>
+                    <li><strong>Online Multiplayer Mode</strong> — Create or join rooms with real-time gameplay powered by Socket.IO. Supports 2–6 players with optional AI bots and timed turns.</li>
+                    <li><strong>Virtual Coin Economy</strong> — Earn coins through gameplay, daily rewards, and watching advertisements. Spend coins on in-game features such as Undo, Hints, and board themes.</li>
+                    <li><strong>Board Theme Shop</strong> — Customize your game board with purchasable themes using virtual coins.</li>
+                    <li><strong>Daily Rewards</strong> — A 7-day streak reward system offering escalating coin bonuses.</li>
+                    <li><strong>Progress Tracking</strong> — Offline game progress, wins, and milestones tracked per player.</li>
+                </ul>
+                <div class="highlight-box">
+                    <div class="highlight-box-title">ℹ️ Entertainment Purpose</div>
+                    <p style="margin:0">Thankans SOS is made purely for fun and entertainment. We have no intention to disrespect anyone. The AI character "Thankan Chettan" and all commentary voice lines are fictional and intended solely for amusement.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Eligibility -->
+        <section class="section" data-animate id="eligibility">
+            <div class="section-card">
+                <div class="section-number gold">3</div>
+                <h2 class="section-heading">Eligibility</h2>
+                <p>The Game is intended for a <strong>general audience</strong>. There are no age restrictions for playing the Game. However, please note the following:</p>
+                <ul>
+                    <li>The Game contains commentary voice lines and text in <strong>Malayalam</strong> (an Indian language) that may include playful or informal language. This content is intended to be humorous and is not meant to offend.</li>
+                    <li>If you are a minor, we recommend that a parent or legal guardian reviews these Terms on your behalf.</li>
+                    <li>The Game displays advertisements. Minors should play under parental supervision if parents have concerns regarding ad content.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 4. User Identity -->
+        <section class="section" data-animate id="accounts">
+            <div class="section-card">
+                <div class="section-number purple">4</div>
+                <h2 class="section-heading">User Identity &amp; Accounts</h2>
+                <p>Thankans SOS <strong>does not require account creation, registration, or login</strong>. The Game operates anonymously with the following identity mechanisms:</p>
+                <ul>
+                    <li><strong>Player Names</strong> — You may enter a display name for local and online gameplay. This name is freely chosen by you and is not verified or linked to any real identity.</li>
+                    <li><strong>Session Identifiers</strong> — During online multiplayer, a temporary session ID is automatically generated by the Socket.IO connection. This ID exists only for the duration of the connection and is not stored permanently.</li>
+                    <li><strong>No Passwords or Personal Data</strong> — We do not collect email addresses, phone numbers, real names, or any other personally identifiable information through the Game.</li>
+                </ul>
+                <p>Room passwords in online multiplayer are used solely for room access control and are not stored beyond the active game session.</p>
+            </div>
+        </section>
+
+        <!-- 5. Gameplay Rules -->
+        <section class="section" data-animate id="gameplay">
+            <div class="section-card">
+                <div class="section-number coral">5</div>
+                <h2 class="section-heading">Gameplay Rules &amp; Fair Play</h2>
+                <p>By using the Game, you agree to the following:</p>
+                <ul>
+                    <li>Play fairly and respect other players in online multiplayer sessions.</li>
+                    <li>Do not use any hacks, scripts, bots, or unauthorized modifications to gain unfair advantages.</li>
+                    <li>Do not exploit bugs or glitches in the Game. If you discover a bug, we encourage you to report it to us.</li>
+                    <li>Do not intentionally disrupt, interfere with, or degrade other players' gaming experience.</li>
+                    <li>The AI opponent "Thankan Chettan" plays according to programmed difficulty levels, and its behavior is deterministic — no real person controls the AI.</li>
+                </ul>
+                <div class="highlight-box warning">
+                    <div class="highlight-box-title">⚠️ Game State Persistence</div>
+                    <p style="margin:0">Your active offline game state may be saved and restored when you reopen the Game. If you clear your browser data or app data, all saved progress will be permanently lost.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Virtual Currency -->
+        <section class="section" data-animate id="virtual-currency">
+            <div class="section-card">
+                <div class="section-number gold">6</div>
+                <h2 class="section-heading">Virtual Currency &amp; In-Game Economy</h2>
+                <p>The Game features a virtual currency system ("Coins") with the following characteristics:</p>
+                <ul>
+                    <li><strong>No Real Money</strong> — Coins have no real-world monetary value. You cannot purchase Coins with real money, and Coins cannot be exchanged, transferred, sold, or redeemed for cash, goods, or services.</li>
+                    <li><strong>Earning Coins</strong> — Coins are earned by winning games against the AI (100–300 coins depending on difficulty), winning online matches (250 coins), scoring points during gameplay (10 coins per point), watching rewarded advertisements (100 coins), and through the daily reward streak system (100–500 coins).</li>
+                    <li><strong>Spending Coins</strong> — Coins can be spent on in-game features including Undo moves (50 coins), Hints (100 coins, max 3 per game), and board theme customizations.</li>
+                    <li><strong>No Refunds</strong> — Coins spent on in-game features are non-refundable. All coin transactions within the Game are final.</li>
+                    <li><strong>Local Storage</strong> — Your coin balance is stored locally on your device. We are not responsible for loss of coins due to device resets, app uninstallation, cache clearing, or any other data loss event.</li>
+                </ul>
+                <div class="highlight-box important">
+                    <div class="highlight-box-title">🚫 No Real-Money Purchases</div>
+                    <p style="margin:0">Thankans SOS does not offer any real-money in-app purchases. The virtual coin economy is entirely self-contained within the Game and has zero monetary value.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Advertisements -->
+        <section class="section" data-animate id="ads">
+            <div class="section-card">
+                <div class="section-number coral">7</div>
+                <h2 class="section-heading">Advertisements</h2>
+                <p>The Game is supported by advertisements. By using the Game, you consent to viewing ads as part of the experience:</p>
+                <ul>
+                    <li><strong>Banner Ads</strong> — Small advertisements displayed during gameplay and on various screens.</li>
+                    <li><strong>Interstitial Ads</strong> — Full-screen advertisements shown at natural breaks in gameplay, such as after completing a match or transitioning between screens. These ads appear periodically and are frequency-controlled.</li>
+                    <li><strong>Rewarded Ads</strong> — Optional full-screen video advertisements that you can choose to watch in exchange for virtual coins. These ads are entirely voluntary.</li>
+                </ul>
+                <p>Advertisements are delivered through the native Android platform and are subject to the advertising network's own terms and privacy policies. We do not control the content of third-party advertisements.</p>
+            </div>
+        </section>
+
+        <!-- 8. Online Multiplayer -->
+        <section class="section" data-animate id="online">
+            <div class="section-card">
+                <div class="section-number blue">8</div>
+                <h2 class="section-heading">Online Multiplayer</h2>
+                <p>The online multiplayer mode connects players in real-time through our game server. By using this feature, you understand and agree that:</p>
+                <ul>
+                    <li><strong>Internet Required</strong> — Online mode requires an active internet connection. The Game's offline mode works without internet.</li>
+                    <li><strong>Room System</strong> — Players can create password-protected rooms and share room codes with others to join. The room host controls game settings including grid size, player count, bot count, and timer configuration.</li>
+                    <li><strong>Data Transmitted</strong> — During online play, the following data is transmitted to our server: your chosen player name, room codes, room passwords, and game actions (moves). No personal or device-identifying information is sent from the Game's frontend.</li>
+                    <li><strong>No Guaranteed Uptime</strong> — We strive to maintain server availability but do not guarantee uninterrupted service. The game server may experience downtime for maintenance, updates, or technical issues.</li>
+                    <li><strong>Session-Based</strong> — Online game data (rooms, moves, scores) exists only for the duration of the active session and is not permanently stored on our servers.</li>
+                    <li><strong>No Chat System</strong> — The Game does not include any text chat, voice chat, or messaging system between players.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 9. Data & Storage -->
+        <section class="section" data-animate id="data">
+            <div class="section-card">
+                <div class="section-number green">9</div>
+                <h2 class="section-heading">Data Collection &amp; Storage</h2>
+                <p>We are committed to respecting your privacy. Here is how the Game handles data:</p>
+                <ul>
+                    <li><strong>Local Storage Only</strong> — All game settings, coin balances, daily reward progress, offline game progress, board theme purchases, and active game states are stored locally on your device using your browser's localStorage. None of this data is sent to our servers.</li>
+                    <li><strong>No Cookies</strong> — The Game does not use cookies or any similar tracking technologies.</li>
+                    <li><strong>No Analytics</strong> — The Game's frontend does not include any analytics, telemetry, or tracking code.</li>
+                    <li><strong>No Personal Data Collection</strong> — We do not collect, store, or process any personally identifiable information such as names, email addresses, phone numbers, device identifiers, or location data.</li>
+                    <li><strong>Third-Party Ads</strong> — The native Android advertising SDK may collect data independently as governed by its own privacy policy. Please refer to your device's ad settings for opt-out options.</li>
+                </ul>
+                <p>For more details on how your data is handled, please review our <a href="https://riksonroy-1.github.io/Rikson_roy/Privacy-Policy.html" style="color: var(--accent-green); text-decoration: underline; text-underline-offset: 3px;" target="_blank" rel="noopener">Privacy Policy</a>.</p>
+            </div>
+        </section>
+
+        <!-- 10. Intellectual Property -->
+        <section class="section" data-animate id="ip">
+            <div class="section-card">
+                <div class="section-number purple">10</div>
+                <h2 class="section-heading">Intellectual Property</h2>
+                <p>All content included in the Game is the property of the developer or used with appropriate rights:</p>
+                <ul>
+                    <li><strong>Game Content</strong> — The game design, user interface, visual elements, animations, code, and overall look and feel of Thankans SOS are the intellectual property of Rikson.</li>
+                    <li><strong>Audio Assets</strong> — All sound effects, commentary voice clips, and background music included in the Game are owned by or licensed to the developer.</li>
+                    <li><strong>Character</strong> — "Thankan Chettan" is a fictional AI character created for this Game. Any resemblance to real persons is purely coincidental.</li>
+                    <li><strong>Fonts</strong> — The Game uses the Inter and Caveat typefaces, which are licensed under the SIL Open Font License.</li>
+                </ul>
+                <p>You may not copy, modify, distribute, sell, or lease any part of the Game, nor may you reverse-engineer or attempt to extract the source code of the Game, unless applicable laws permit such activities regardless of this limitation.</p>
+            </div>
+        </section>
+
+        <!-- 11. User Conduct -->
+        <section class="section" data-animate id="conduct">
+            <div class="section-card">
+                <div class="section-number coral">11</div>
+                <h2 class="section-heading">User Conduct</h2>
+                <p>While using the Game, you agree <strong>not to</strong>:</p>
+                <ul>
+                    <li>Use offensive, vulgar, or inappropriate player names during online multiplayer sessions.</li>
+                    <li>Attempt to hack, exploit, or manipulate the Game, its server, or other players' experiences.</li>
+                    <li>Attempt to overload, disrupt, or perform denial-of-service attacks on the game server.</li>
+                    <li>Use automated tools or bots to play on your behalf in online multiplayer.</li>
+                    <li>Impersonate other players, the developer, or any other entity.</li>
+                    <li>Use the Game for any illegal or unauthorized purpose.</li>
+                </ul>
+                <p>Violations of these conduct rules may result in your access to the online multiplayer service being restricted or terminated.</p>
+            </div>
+        </section>
+
+        <!-- 12. Disclaimer -->
+        <section class="section" data-animate id="disclaimer">
+            <div class="section-card">
+                <div class="section-number gold">12</div>
+                <h2 class="section-heading">Disclaimer of Warranties</h2>
+                <p>The Game is provided on an <strong>"AS IS"</strong> and <strong>"AS AVAILABLE"</strong> basis without warranties of any kind, whether express or implied, including but not limited to:</p>
+                <ul>
+                    <li>Implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</li>
+                    <li>Warranties that the Game will be uninterrupted, error-free, secure, or free from viruses or other harmful components.</li>
+                    <li>Warranties regarding the accuracy, reliability, or completeness of any content in the Game.</li>
+                </ul>
+                <p>The AI commentary, character dialogues, and voice clips in the Game are fictional entertainment content. They do not represent the views, opinions, or endorsements of any real person, organization, or entity.</p>
+            </div>
+        </section>
+
+        <!-- 13. Limitation of Liability -->
+        <section class="section" data-animate id="liability">
+            <div class="section-card">
+                <div class="section-number blue">13</div>
+                <h2 class="section-heading">Limitation of Liability</h2>
+                <p>To the maximum extent permitted by applicable law, the developer shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to:</p>
+                <ul>
+                    <li>Loss of virtual coins, game progress, or saved data due to device issues, software updates, or data clearing.</li>
+                    <li>Interruption or unavailability of online multiplayer services.</li>
+                    <li>Any actions, content, or behavior of other players during online gameplay.</li>
+                    <li>Third-party advertisement content displayed within the Game.</li>
+                    <li>Any damage to your device resulting from use of the Game.</li>
+                </ul>
+                <p>Your sole and exclusive remedy for dissatisfaction with the Game is to stop using the Game.</p>
+            </div>
+        </section>
+
+        <!-- 14. Third-Party Services -->
+        <section class="section" data-animate id="thirdparty">
+            <div class="section-card">
+                <div class="section-number purple">14</div>
+                <h2 class="section-heading">Third-Party Services</h2>
+                <p>The Game utilizes the following third-party services:</p>
+                <ul>
+                    <li><strong>Socket.IO</strong> — For real-time communication in online multiplayer mode.</li>
+                    <li><strong>Render.com</strong> — For hosting the online game server infrastructure.</li>
+                    <li><strong>Native Advertising SDKs</strong> — For displaying advertisements within the Android application (managed by the native wrapper, not the game frontend).</li>
+                </ul>
+                <p>These services operate under their own terms and privacy policies. We are not responsible for the practices, content, or data handling of third-party services. We encourage you to review the terms and policies of any third-party service you interact with through the Game.</p>
+            </div>
+        </section>
+
+        <!-- 15. Termination -->
+        <section class="section" data-animate id="termination">
+            <div class="section-card">
+                <div class="section-number green">15</div>
+                <h2 class="section-heading">Termination</h2>
+                <p>We reserve the right to:</p>
+                <ul>
+                    <li>Terminate or suspend your access to the online multiplayer service at our discretion, with or without notice, for conduct that we believe violates these Terms or is harmful to other users.</li>
+                    <li>Discontinue the Game or any of its features (including online services) at any time without prior notice or liability.</li>
+                    <li>Modify game mechanics, coin values, reward amounts, and other gameplay parameters at any time.</li>
+                </ul>
+                <p>Upon termination of online services, all local game data stored on your device will remain accessible in offline mode, subject to your device's data retention.</p>
+            </div>
+        </section>
+
+        <!-- 16. Changes to Terms -->
+        <section class="section" data-animate id="changes">
+            <div class="section-card">
+                <div class="section-number gold">16</div>
+                <h2 class="section-heading">Changes to These Terms</h2>
+                <p>We may update these Terms from time to time. When we make changes:</p>
+                <ul>
+                    <li>The "Effective Date" at the top of this page will be revised to reflect the date of the latest version.</li>
+                    <li>Material changes may be communicated through an in-app notice or updated version of the Game.</li>
+                    <li>Your continued use of the Game after changes become effective constitutes your acceptance of the revised Terms.</li>
+                </ul>
+                <p>We recommend reviewing these Terms periodically to stay informed of any updates.</p>
+            </div>
+        </section>
+
+        <!-- 17. Governing Law -->
+        <section class="section" data-animate id="governing">
+            <div class="section-card">
+                <div class="section-number blue">17</div>
+                <h2 class="section-heading">Governing Law</h2>
+                <p>These Terms shall be governed by and construed in accordance with the laws of <strong>India</strong>, without regard to its conflict of law provisions. Any disputes arising out of or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts in India.</p>
+                <p>If any provision of these Terms is held to be invalid or unenforceable, the remaining provisions shall continue in full force and effect.</p>
+            </div>
+        </section>
+
+        <!-- 18. Contact Us -->
+        <section class="section" data-animate id="contact">
+            <div class="section-card">
+                <div class="section-number green">18</div>
+                <h2 class="section-heading">Contact Us</h2>
+                <p>If you have any questions, concerns, or suggestions about these Terms and Conditions, please reach out to us:</p>
+                <ul>
+                    <li><strong>Developer</strong> — Rikson</li>
+                    <li><strong>Website</strong> — <a href="https://riksonroy-1.github.io/Rikson_roy/" style="color: var(--accent-green); text-decoration: underline; text-underline-offset: 3px;" target="_blank" rel="noopener">riksonroy-1.github.io/Rikson_roy</a></li>
+                </ul>
+                <p>We appreciate your feedback and are committed to improving your gaming experience.</p>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="page-footer">
+            <div class="footer-logo">Thankans SOS</div>
+            <p class="footer-text">Version 2.5.0 — By Rikson</p>
+            <p class="footer-text">© 2026 Rikson. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://riksonroy-1.github.io/Rikson_roy/Privacy-Policy.html" target="_blank" rel="noopener">Privacy Policy</a>
+                <a href="https://riksonroy-1.github.io/Rikson_roy/" target="_blank" rel="noopener">About</a>
+                <a href="https://riksonroy-1.github.io/Rikson_roy/#projects" target="_blank" rel="noopener">More Products</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- BACK TO TOP BUTTON -->
+    <a href="#top" class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+    </a>
+
+    <script>
+        // Back to top visibility
+        const backToTop = document.getElementById('backToTop');
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                if (window.scrollY > 400) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            }, 50);
+        }, { passive: true });
+
+        // Scroll-triggered animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.section[data-animate]').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
