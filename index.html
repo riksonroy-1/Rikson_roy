@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Rikson Roy | CSE Student, Developer &amp; Game Creator</title>
   <meta name="description"
-    content="Hi, I'm Rikson Roy, a Computer Science and Engineering student at SNGCE, developer, game creator, and photography enthusiast. Explore my projects, photos, social links, and Android game THANKANS POOJYAM VETTU." />
+    content="Hi, I'm Rikson Roy, a Computer Science and Engineering student at SNGCE, developer, game creator, and photography enthusiast. Explore my projects, photos, social links, and Android games THANKANS POOJYAM VETTU & THANKANS SOS." />
   <meta name="keywords"
-    content="Rikson Roy, Rikson, CSE student, SNGCE, portfolio, projects, coder, developer, web developer, photography, game developer, Android game, THANKANS POOJYAM VETTU, Poojyam Vettu" />
+    content="Rikson Roy, Rikson, CSE student, SNGCE, portfolio, projects, coder, developer, web developer, photography, game developer, Android game, THANKANS POOJYAM VETTU, Poojyam Vettu, THANKANS SOS, SOS game, Malayalam humour game" />
   <meta name="author" content="Rikson Roy" />
   <link rel="canonical" href="https://riksonroy-1.github.io/Rikson_roy/" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -98,6 +98,22 @@
         "operatingSystem": "Android",
         "url": "https://play.google.com/store/apps/details?id=com.rick.thankanspoojyamvettu",
         "description": "THANKANS POOJYAM VETTU is a Dots and Boxes inspired game by Rikson Roy with offline play, online rooms, progress, themes, settings, and a playful local game identity."
+      },
+      {
+        "@type": "VideoGame",
+        "@id": "https://riksonroy-1.github.io/Rikson_roy/#thankans-sos",
+        "name": "THANKANS SOS",
+        "creator": {
+          "@id": "https://riksonroy-1.github.io/Rikson_roy/#rikson-roy"
+        },
+        "publisher": {
+          "@id": "https://riksonroy-1.github.io/Rikson_roy/#rikson-roy"
+        },
+        "applicationCategory": "GameApplication",
+        "gamePlatform": ["Android"],
+        "operatingSystem": "Android",
+        "url": "https://play.google.com/store/apps/details?id=com.rick.thankanssos",
+        "description": "THANKANS SOS is an SOS board game by Rikson Roy with Malayalam humour, featuring the playful Thankans character and fun local comedy."
       },
       {
         "@type": "ImageGallery",
@@ -1971,6 +1987,125 @@
         transform: none;
       }
     }
+    /* ── Game Tabs & Content Switcher ── */
+    .game-tabs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 36px;
+      padding: 5px;
+      background: var(--panel-strong);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      width: fit-content;
+    }
+
+    .game-tab {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: color 300ms var(--ease), background 300ms var(--ease), box-shadow 300ms var(--ease), transform 300ms var(--ease-spring);
+    }
+
+    .game-tab:hover {
+      color: var(--ink-soft);
+      background: color-mix(in srgb, var(--accent) 8%, transparent);
+    }
+
+    .game-tab.active {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(13, 110, 102, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    [data-theme="dark"] .game-tab.active {
+      box-shadow: 0 4px 16px rgba(47, 196, 178, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .new-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--coral);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      line-height: 1.4;
+      animation: badgePulse 2s ease-in-out infinite;
+    }
+
+    .game-tab.active .new-badge {
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    @keyframes badgePulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+
+    .game-content {
+      display: none;
+    }
+
+    .game-content.active {
+      display: block;
+      animation: gameContentIn 500ms var(--ease-spring) both;
+    }
+
+    @keyframes gameContentIn {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .project-card:nth-child(4)::before {
+      background: var(--gradient-gold);
+    }
+
+    .project-card:nth-child(4) .project-icon {
+      background: var(--gradient-gold);
+      box-shadow: 0 6px 18px rgba(184, 135, 42, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .project-card:nth-child(4):hover .project-icon {
+      box-shadow: 0 8px 24px rgba(184, 135, 42, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .projects-grid .reveal:nth-child(4) {
+      transition-delay: 300ms;
+    }
+
+    @media (max-width: 760px) {
+      .game-tabs {
+        width: 100%;
+      }
+
+      .game-tab {
+        flex: 1;
+        justify-content: center;
+        padding: 11px 14px;
+        font-size: 0.84rem;
+      }
+
+      .projects-grid .reveal:nth-child(4) {
+        transition-delay: 0ms !important;
+      }
+    }
   </style>
 </head>
 
@@ -1986,7 +2121,7 @@
 
       <nav class="main-nav" id="mainNav" aria-label="Main navigation">
         <a href="#home" class="nav-link active">Home</a>
-        <a href="#game" class="nav-link">Game</a>
+        <a href="#games" class="nav-link">Games</a>
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#gallery" class="nav-link">Gallery</a>
         <a href="#contact" class="nav-link">Contact</a>
@@ -2024,9 +2159,9 @@
             remember.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#game">
+            <a class="btn btn-primary" href="#games">
               <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
-              View My Game
+              View My Games
             </a>
             <a class="btn btn-ghost" href="Rikson_Roy_Resume.pdf" download>
               <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
@@ -2050,8 +2185,8 @@
           </div>
           <div class="quick-stats" aria-label="Portfolio stats">
             <div class="stat-card">
-              <strong data-count="1">0</strong>
-              <span>Android game</span>
+              <strong data-count="2">0</strong>
+              <span>Android games</span>
             </div>
             <div class="stat-card">
               <strong data-count="4" data-suffix="+">0</strong>
@@ -2123,15 +2258,31 @@
       </div>
     </section>
 
-    <section class="section" id="game">
+    <section class="section" id="games">
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <p class="section-kicker">Featured Game</p>
-            <h2 class="section-title">THANKANS POOJYAM VETTU</h2>
+            <p class="section-kicker">Featured Games</p>
+            <h2 class="section-title">Games built with creativity & Malayalam humour.</h2>
           </div>
+          <p class="section-copy">
+            Android games published on Google Play, blending local culture with fun gameplay experiences.
+          </p>
         </div>
 
+        <div class="game-tabs reveal">
+          <button class="game-tab active" data-game="poojyam-vettu" type="button">
+            <i class="fa-solid fa-border-all" aria-hidden="true"></i>
+            Poojyam Vettu
+          </button>
+          <button class="game-tab" data-game="sos" type="button">
+            <i class="fa-solid fa-hashtag" aria-hidden="true"></i>
+            Thankans SOS
+            <span class="new-badge">New</span>
+          </button>
+        </div>
+
+        <div class="game-content active" id="game-poojyam-vettu">
         <div class="game-showcase">
           <div class="game-media reveal">
             <img src="assets/thankans-home.jpeg" alt="THANKANS POOJYAM VETTU game home screen" loading="eager" />
@@ -2239,6 +2390,117 @@
             <figcaption>Winner state</figcaption>
           </figure>
         </div>
+        </div>
+
+        <div class="game-content" id="game-sos">
+          <div class="game-showcase">
+            <div class="game-media reveal">
+              <img src="assets/sos-home.jpg" alt="THANKANS SOS game home screen" loading="lazy" />
+              <div class="game-media-label">
+                <strong>THANKANS</strong>
+                <span>SOS by Rikson Roy</span>
+              </div>
+            </div>
+
+            <article class="game-panel reveal">
+              <div>
+                <h3 class="game-title">SOS with a twist of Malayalam humour.</h3>
+                <p class="game-description">
+                  THANKANS SOS is the classic SOS board game reimagined with Malayalam humour and playful
+                  Thankan-style character. Challenge friends, fill the grid with S and O, and enjoy hilarious
+                  commentary that makes every match entertaining.
+                </p>
+
+                <div class="feature-grid" aria-label="SOS game features">
+                  <div class="feature-item">
+                    <i class="fa-solid fa-face-laugh-squint" aria-hidden="true"></i>
+                    <div>
+                      <strong>Malayalam humour</strong>
+                      <span>Hilarious local comedy woven into every match and moment.</span>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fa-solid fa-table-cells" aria-hidden="true"></i>
+                    <div>
+                      <strong>Classic SOS gameplay</strong>
+                      <span>The timeless SOS board game with a fresh, fun interface.</span>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fa-solid fa-user-group" aria-hidden="true"></i>
+                    <div>
+                      <strong>Multiplayer fun</strong>
+                      <span>Play with friends locally and compete for the highest score.</span>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fa-solid fa-palette" aria-hidden="true"></i>
+                    <div>
+                      <strong>Vibrant design</strong>
+                      <span>Fun visuals with the signature Thankans style and flair.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="detail-grid" aria-label="SOS game details">
+                  <div class="detail-card">
+                    <span>Developer</span>
+                    <strong>Rikson Roy</strong>
+                  </div>
+                  <div class="detail-card">
+                    <span>Platform</span>
+                    <strong>Android</strong>
+                  </div>
+                  <div class="detail-card">
+                    <span>Genre</span>
+                    <strong>Board / Comedy</strong>
+                  </div>
+                  <div class="detail-card">
+                    <span>Support email</span>
+                    <a href="mailto:riksonroy54@gmail.com">riksonroy54@gmail.com</a>
+                  </div>
+                  <div class="detail-card">
+                    <span>Content note</span>
+                    <strong>Malayalam humor / 18+</strong>
+                  </div>
+                  <div class="detail-card">
+                    <span>Developer page</span>
+                    <a href="https://play.google.com/store/apps/dev?id=8865657185045304173" target="_blank"
+                      rel="noopener">Google Play</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="button-row">
+                <a class="btn btn-primary"
+                  href="https://play.google.com/store/apps/details?id=com.rick.thankansos" target="_blank"
+                  rel="noopener">
+                  <i class="fa-brands fa-google-play" aria-hidden="true"></i>
+                  Open on Google Play
+                </a>
+                <a class="btn btn-ghost" href="#contact">
+                  <i class="fa-solid fa-headset" aria-hidden="true"></i>
+                  Contact Developer
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="screenshot-grid reveal" aria-label="SOS game screenshots">
+            <figure>
+              <img src="assets/sos-gameplay.jpg" alt="THANKANS SOS gameplay screen" loading="lazy" />
+              <figcaption>Gameplay</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/sos-board.jpg" alt="THANKANS SOS game board" loading="lazy" />
+              <figcaption>Game board</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/sos-winner.jpg" alt="THANKANS SOS winner screen" loading="lazy" />
+              <figcaption>Winner screen</figcaption>
+            </figure>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -2297,6 +2559,22 @@
               </p>
             </div>
             <a class="btn btn-ghost" href="https://play.google.com/store/apps/details?id=com.rick.thankanspoojyamvettu"
+              target="_blank" rel="noopener">
+              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+              Play Game
+            </a>
+          </article>
+
+          <article class="project-card reveal">
+            <div>
+              <div class="project-icon"><i class="fa-solid fa-hashtag" aria-hidden="true"></i></div>
+              <h3>Thankans SOS</h3>
+              <p>
+                An SOS board game with Malayalam humour published on Google Play, featuring the playful Thankans
+                character and fun local comedy.
+              </p>
+            </div>
+            <a class="btn btn-ghost" href="https://play.google.com/store/apps/details?id=com.rick.thankanssos"
               target="_blank" rel="noopener">
               <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
               Play Game
@@ -2588,6 +2866,24 @@
     }, { threshold: 0.3 });
 
     counterEls.forEach(el => counterObserver.observe(el));
+
+    // Game tab switching
+    document.querySelectorAll('.game-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.game-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.game-content').forEach(c => c.classList.remove('active'));
+        tab.classList.add('active');
+        const targetGame = document.getElementById('game-' + tab.dataset.game);
+        if (targetGame) {
+          targetGame.classList.add('active');
+          targetGame.querySelectorAll('.reveal').forEach(el => {
+            el.classList.remove('is-visible');
+            void el.offsetWidth;
+            el.classList.add('is-visible');
+          });
+        }
+      });
+    });
 
     if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
       document.querySelectorAll(".project-card").forEach(card => {
