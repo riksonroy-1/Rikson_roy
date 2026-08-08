@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Privacy Policy | Thankans: The Card Party</title>
+  <style>
+    :root {
+      --page: #f5f7fb;
+      --panel: #ffffff;
+      --text: #172033;
+      --muted: #5e6b82;
+      --line: #dfe5ef;
+      --accent: #1677ff;
+      --accent-soft: #e8f1ff;
+      --good: #0f8f61;
+      --shadow: 0 18px 50px rgba(23, 32, 51, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        linear-gradient(180deg, rgba(22, 119, 255, 0.08), transparent 320px),
+        var(--page);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+
+    .page {
+      width: min(100% - 32px, 1040px);
+      margin: 0 auto;
+      padding: 42px 0;
+    }
+
+    .document {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    header {
+      padding: 44px 48px 34px;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(22, 119, 255, 0.13), transparent 34%),
+        linear-gradient(180deg, #ffffff, #f9fbff);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #0d55b3;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 760px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .meta-card {
+      min-height: 82px;
+      padding: 15px 16px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #ffffff;
+    }
+
+    .meta-card strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 13px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    main {
+      padding: 14px 48px 44px;
+    }
+
+    section {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 24px;
+      line-height: 1.25;
+    }
+
+    h3 {
+      margin: 24px 0 8px;
+      font-size: 18px;
+    }
+
+    p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 22px;
+      color: var(--muted);
+    }
+
+    li {
+      margin-bottom: 9px;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .summary-item {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fbfcff;
+    }
+
+    .summary-item strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .notice {
+      margin: 18px 0 0;
+      padding: 18px 20px;
+      border: 1px solid rgba(22, 119, 255, 0.25);
+      border-left: 4px solid var(--accent);
+      border-radius: 12px;
+      background: var(--accent-soft);
+      color: #214168;
+    }
+
+    .notice p {
+      color: #214168;
+      margin: 0;
+    }
+
+    .data-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .data-item {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fbfcff;
+    }
+
+    .data-item strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .contact-box {
+      padding: 22px;
+      border-radius: 14px;
+      background: #f4f9ff;
+      border: 1px solid rgba(22, 119, 255, 0.24);
+    }
+
+    footer {
+      padding: 22px 48px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      background: #fbfcff;
+      font-size: 14px;
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        width: min(100% - 20px, 1040px);
+        padding: 16px 0;
+      }
+
+      header,
+      main,
+      footer {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      header {
+        padding-top: 30px;
+      }
+
+      .meta-grid,
+      .summary {
+        grid-template-columns: 1fr;
+      }
+
+      .document {
+        border-radius: 14px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+      }
+
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+
+      .document {
+        border: 0;
+        box-shadow: none;
+      }
+
+      a {
+        color: #000000;
+        text-decoration: underline;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <article class="document">
+      <header>
+        <div class="badge">Official Privacy Policy</div>
+        <h1>Privacy Policy</h1>
+        <p class="subtitle">
+          This Privacy Policy explains how Thankans: The Card Party handles information when you use the game, including offline play against AI, local Wi-Fi multiplayer, online multiplayer, player progress, and advertising features.
+        </p>
+
+        <div class="meta-grid" aria-label="Policy details">
+          <div class="meta-card">
+            <strong>App</strong>
+            Thankans: The Card Party
+          </div>
+          <div class="meta-card">
+            <strong>Developer</strong>
+            Rikson Roy
+          </div>
+          <div class="meta-card">
+            <strong>Last Updated</strong>
+            August 08, 2026
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section>
+          <h2>1. Overview</h2>
+          <p>
+            Thankans: The Card Party is a card game inspired by classic card-matching gameplay. It offers offline play against AI opponents, local Wi-Fi multiplayer where one device hosts for nearby players, and online multiplayer with private rooms and public matchmaking. We do not require you to create an account, sign in, or provide a real name to play.
+          </p>
+          <p>
+            This policy is intended to be clear and practical. It describes what the app may collect or process, why it is needed, who may receive it, how long it is kept, and how you can contact us.
+          </p>
+          <div class="summary">
+            <div class="summary-item">
+              <strong>No account required</strong>
+              You can play without registration, login, email address, phone number, or payment information.
+            </div>
+            <div class="summary-item">
+              <strong>Local progress stays on your device</strong>
+              Offline settings, player progress, rank, win/loss statistics, and sound preferences are stored on your device unless you clear them.
+            </div>
+            <div class="summary-item">
+              <strong>Multiplayer needs network data</strong>
+              Local Wi-Fi and online multiplayer send display name, room information, and gameplay data to the game server so matches can work.
+            </div>
+            <div class="summary-item">
+              <strong>Ads may use third-party data</strong>
+              If ads are enabled in the Google Play version, advertising providers may collect data as described below. Rewarded ads are optional and triggered only by player choice.
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>2. Information We Collect or Process</h2>
+          <p>
+            The app collects or processes only the information needed for gameplay, multiplayer, saved progress, app stability, and advertising where enabled.
+          </p>
+
+          <div class="data-list">
+            <div class="data-item">
+              <strong>Player names and display names</strong>
+              You may enter a display name for offline or multiplayer gameplay. You should not enter your real name if you do not want it visible to others. In multiplayer matches, your display name is visible to other players in the same room or match.
+            </div>
+
+            <div class="data-item">
+              <strong>Local Wi-Fi multiplayer information</strong>
+              When you host or join a local game, the app runs a lightweight server on the host device and uses your local network (Wi-Fi) to connect nearby players. The app processes local IP addresses, room passwords, player names, and gameplay data over your local network. Room passwords are used only to protect rooms and should not be reused from any personal account. The app uses UDP broadcast for room discovery on the local network.
+            </div>
+
+            <div class="data-item">
+              <strong>Online multiplayer information</strong>
+              When you create or join an online room or use public matchmaking, the app connects to a WebSocket server and processes the room code, room password, player list, host status, connection status, and gameplay data. This information is used to operate the online match and is visible only as needed for players in the same room or match.
+            </div>
+
+            <div class="data-item">
+              <strong>Gameplay data</strong>
+              The app processes card plays, turn order, direction of play, card draws, special card effects, BOOM calls, match results, and timer information. Offline gameplay data is stored locally. Multiplayer gameplay data is sent to the game server so all players see the same match state.
+            </div>
+
+            <div class="data-item">
+              <strong>Player progress and rank</strong>
+              The app stores your win count, loss count, win streak, best streak, total games played, and rank tier on your device using local storage. This data stays on your device and is not uploaded to any server.
+            </div>
+
+            <div class="data-item">
+              <strong>Technical and network data</strong>
+              Online play and hosting services may automatically process technical data such as IP address, approximate network location derived from IP address, device information, operating system, connection events, socket/session identifiers, logs, and diagnostics. This is used to connect players, keep the service stable, prevent abuse, and troubleshoot errors.
+            </div>
+
+            <div class="data-item">
+              <strong>Settings and local storage</strong>
+              The app stores settings such as player name, sound preferences, music volume, and game progress on your device using local app storage (SharedPreferences). These items are used only to provide gameplay features on your device.
+            </div>
+
+            <div class="data-item">
+              <strong>Advertising data, if ads are enabled</strong>
+              The Google Play build may show banner ads, interstitial ads, and optional rewarded ads through a native advertising SDK such as Google Mobile Ads or AdMob. Rewarded ads are voluntary. Advertising providers may collect or receive data such as IP address, Android advertising ID or other device/account identifiers where available, app interactions such as app launches, taps and video views, ad views, rewarded ad completion status, device information, diagnostics, crash or performance data, and approximate location derived from IP address for ad delivery, measurement, analytics, fraud prevention, security, and compliance.
+            </div>
+
+            <div class="data-item">
+              <strong>Messages you send to us</strong>
+              If you contact us by email, we will receive your email address and the contents of your message so we can respond.
+            </div>
+          </div>
+
+          <div class="notice">
+            <p>
+              We do not use the game to access your contacts, precise GPS location, camera, microphone, SMS, phone call history, calendar, photos, videos, health data, or payment card information.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2>3. How We Use Information</h2>
+          <p>We use information for the following purposes:</p>
+          <ul>
+            <li>To provide offline gameplay against AI opponents, saved settings, and saved progress.</li>
+            <li>To host and connect local Wi-Fi multiplayer games between nearby devices.</li>
+            <li>To create, join, protect, and run online multiplayer rooms and public matchmaking.</li>
+            <li>To synchronize card plays, turns, direction, penalties, BOOM calls, and match results between players.</li>
+            <li>To track player rank, win/loss statistics, and streaks on the local device.</li>
+            <li>To maintain, debug, secure, and improve the game and online service.</li>
+            <li>To show ads and measure ad performance if advertising is enabled.</li>
+            <li>To respond to support, privacy, or deletion requests you send to us.</li>
+            <li>To comply with legal obligations and enforce our rights where necessary.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>4. Offline Storage on Your Device</h2>
+          <p>
+            Offline progress and settings are stored locally on your device. This can include your chosen player name, win/loss record, win streak, best streak, total games, rank tier, sound preferences, and music volume settings.
+          </p>
+          <p>
+            These items are used only to provide gameplay features on your device. We do not receive this local offline data unless you use a multiplayer feature that sends selected gameplay or display information to the game server, or unless you choose to send us information for support.
+          </p>
+        </section>
+
+        <section>
+          <h2>5. Local Wi-Fi Multiplayer</h2>
+          <p>
+            Local Wi-Fi multiplayer allows one device to act as a host server on your local network. Other nearby devices connect to this host over Wi-Fi. The app uses UDP broadcast to discover available rooms on the local network.
+          </p>
+          <p>
+            When you use local multiplayer, the host device processes display names, room passwords, player lists, AI player settings, game moves, card plays, and match results. This information stays on your local network and is not sent to any external server.
+          </p>
+          <p>
+            Room passwords are used only to help protect private rooms. Do not reuse a personal account password as a room password.
+          </p>
+        </section>
+
+        <section>
+          <h2>6. Online Multiplayer</h2>
+          <p>
+            Online multiplayer requires an internet connection and uses a WebSocket server to create and manage rooms. The app connects to the online service using WebSocket technology.
+          </p>
+          <p>
+            When you use online mode, the server may process your display name, room code, room password, player list, AI player configurations, game moves, card plays, turn information, penalties, match results, connection status, socket/session identifiers, and IP address. This information is used to operate the online match and is visible only as needed for players in the same room and for service operation.
+          </p>
+          <p>
+            Public matchmaking allows you to find opponents without creating a room. The server queues players and starts a match when enough players are available or after a short waiting period. The server processes your display name, connection status, and gameplay data during matchmaking and gameplay.
+          </p>
+          <p>
+            The online service is currently hosted on Render using the app's online server URL. Render or other hosting providers we use may process logs and technical data to deliver, secure, monitor, and troubleshoot the service.
+          </p>
+        </section>
+
+        <section>
+          <h2>7. Advertising and Third-Party Services</h2>
+          <p>
+            The app may display advertisements in the Google Play version. The game may include banner ads, interstitial ads, optional rewarded ads, or similar ad formats. Rewarded ads are voluntary and triggered only by the player's choice.
+          </p>
+          <p>
+            Advertising data may include IP address, device identifiers such as the Android advertising ID where available, app interactions, ad views, diagnostics, and approximate location inferred from IP address. Advertising providers use this information for ad delivery, measurement, fraud prevention, security, analytics, and compliance.
+          </p>
+          <p>
+            Google states that data collected by the Google Mobile Ads SDK is encrypted in transit using Transport Layer Security (TLS). Advertising identifiers can usually be reset or deleted from Android or Google settings, depending on your device.
+          </p>
+          <p>
+            Where required by law or platform rules, the app or advertising SDK may ask for consent before showing personalized ads or using certain advertising technologies.
+          </p>
+          <p>
+            You can learn more about Google's advertising practices at <a href="https://policies.google.com/technologies/ads" rel="noopener">Google Advertising Policies</a> and Google's privacy practices at <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a>.
+          </p>
+        </section>
+
+        <section>
+          <h2>8. Sharing of Information</h2>
+          <p>
+            We do not sell, rent, or trade your personal information. We may share or allow processing of information only in the following situations:
+          </p>
+          <ul>
+            <li>With the online game server and hosting providers to provide online multiplayer and matchmaking.</li>
+            <li>With advertising providers if ads are enabled in the app.</li>
+            <li>With platform and service providers, such as Google Play and Android services, as needed for app distribution, security, ads, and platform functionality.</li>
+            <li>With other players in the same multiplayer room or match, limited to display names, gameplay state, card counts, and room-related status.</li>
+            <li>When required by law, legal process, security needs, or to protect our rights, users, or the public.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>9. Data Retention and Deletion</h2>
+          <p>
+            Local settings, offline progress, rank, and statistics remain on your device until you delete them, clear app storage, or uninstall the app.
+          </p>
+          <p>
+            Online room data is used to operate live rooms and matches. We aim to keep room and gameplay information only as long as needed for online gameplay, maintenance, security, troubleshooting, and legal compliance. Hosting providers may retain technical logs for a limited period according to their own operations and policies.
+          </p>
+          <p>
+            Because the app does not create user accounts, there is no account deletion process. To request deletion of information that may be associated with online multiplayer or a support email, contact us using the email address below and include enough detail for us to identify the relevant data, such as room code, approximate date, and display name.
+          </p>
+        </section>
+
+        <section>
+          <h2>10. Your Choices and Controls</h2>
+          <ul>
+            <li>You can use a nickname instead of your real name.</li>
+            <li>You can play offline against AI if you do not want any network data processed.</li>
+            <li>You can avoid online multiplayer if you do not want room or connection information processed by the online server.</li>
+            <li>You can choose not to watch rewarded ads. Rewarded ads are optional.</li>
+            <li>You can delete local data by clearing the app's storage/data or uninstalling the app.</li>
+            <li>You can manage Android advertising ID settings and ad personalization controls in your device or Google settings where available.</li>
+            <li>You can contact us to request access, correction, deletion, or more information about data we may hold.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>11. Security</h2>
+          <p>
+            We use reasonable technical and organizational measures to protect information, including using HTTPS/TLS and WSS (WebSocket Secure) for network connections where supported and limiting data use to the purposes described in this policy. However, no internet transmission, app, server, or storage system can be guaranteed to be completely secure.
+          </p>
+        </section>
+
+        <section>
+          <h2>12. Children's Privacy</h2>
+          <p>
+            The app is intended for general entertainment and is not specifically directed to children under 13 or the minimum age required by local law. We do not knowingly collect personal information from children.
+          </p>
+          <p>
+            Children should not enter real names, personal contact details, or personal passwords in the game. If you are a parent or guardian and believe a child has provided personal information through the app, please contact us and we will take reasonable steps to delete it where possible.
+          </p>
+          <p>
+            If the app is listed on Google Play as targeted to children or families, the app, ads, SDKs, and data practices must comply with applicable children's privacy laws and Google Play Families policies.
+          </p>
+        </section>
+
+        <section>
+          <h2>13. International Users and Legal Rights</h2>
+          <p>
+            Depending on where you live, you may have privacy rights such as the right to request access, correction, deletion, restriction, objection, portability, or withdrawal of consent. To exercise these rights, contact us using the email address below.
+          </p>
+          <p>
+            For users in regions that require a legal basis for processing, we process information to provide the app and multiplayer services, based on our legitimate interests in operating and securing the game, based on consent where required for advertising or similar technologies, and as needed to comply with legal obligations.
+          </p>
+        </section>
+
+        <section>
+          <h2>14. Changes to This Privacy Policy</h2>
+          <p>
+            We may update this Privacy Policy from time to time. When we make changes, we will update the "Last Updated" date above and publish the updated policy in the app or at the policy page used for the Google Play listing.
+          </p>
+        </section>
+
+        <section>
+          <h2>15. Contact Us</h2>
+          <div class="contact-box">
+            <p>
+              If you have questions, requests, or concerns about this Privacy Policy or the app's data practices, contact:
+            </p>
+            <p>
+              <strong>Rikson Roy</strong><br />
+              Email: <a href="mailto:riksonroy54@gmail.com">riksonroy54@gmail.com</a>
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        &copy; 2026 Rikson Roy. Thankans: The Card Party. All rights reserved.
+      </footer>
+    </article>
+  </div>
+</body>
+</html>
