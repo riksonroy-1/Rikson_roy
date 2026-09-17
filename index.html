@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Rikson Roy | CSE Student, Developer &amp; Game Creator</title>
   <meta name="description"
-    content="Hi, I'm Rikson Roy, a Computer Science and Engineering student at SNGCE, developer, game creator, and photography enthusiast. Explore my projects, photos, social links, and Android games THANKANS POOJYAM VETTU & THANKANS SOS." />
+    content="Hi, I'm Rikson Roy, a Computer Science and Engineering student at SNGCE, developer, game creator, and photography enthusiast. Explore my projects, photos, social links, and Android games THANKANS POOJYAM VETTU, THANKANS SOS & THANKANS: THE CARD PARTY." />
   <meta name="keywords"
-    content="Rikson Roy, Rikson, CSE student, SNGCE, portfolio, projects, coder, developer, web developer, photography, game developer, Android game, THANKANS POOJYAM VETTU, Poojyam Vettu, THANKANS SOS, SOS game, Malayalam humour game" />
+    content="Rikson Roy, Rikson, CSE student, SNGCE, portfolio, projects, coder, developer, web developer, photography, game developer, Android game, THANKANS POOJYAM VETTU, Poojyam Vettu, THANKANS SOS, SOS game, Malayalam humour game, Thankans The Card Party, UNO style game" />
   <meta name="author" content="Rikson Roy" />
   <link rel="canonical" href="https://riksonroy-1.github.io/Rikson_roy/" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -75,7 +75,7 @@
         "name": "Rikson Roy Portfolio",
         "url": "https://riksonroy-1.github.io/Rikson_roy/",
         "publisher": {
-          "@id": "https://riksonroy-1.github.io/Rikson_roy/#rikson-roy"
+          "@id": "https://riksonroy-1.github.io/Rikson_roy/#rikson-roy"	
         },
         "image": "https://i.ibb.co/jk0KcYYv/rikson.jpg"
       },
@@ -114,6 +114,22 @@
         "operatingSystem": "Android",
         "url": "https://play.google.com/store/apps/details?id=com.rick.thankanssos",
         "description": "THANKANS SOS is an SOS board game by Rikson Roy with Malayalam humour, featuring the playful Thankans character and fun local comedy."
+      },
+      {
+        "@type": "VideoGame",
+        "@id": "https://riksonroy-1.github.io/Rikson_roy/#thankans-card-party",
+        "name": "THANKANS: THE CARD PARTY",
+        "creator": {
+          "@id": "https://riksonroy-1.github.io/Rikson_roy/#rikson-roy"
+        },
+        "publisher": {
+          "@id": "https://riksonroy-1.github.io/Rikson_roy/#rikson-roy"
+        },
+        "applicationCategory": "GameApplication",
+        "gamePlatform": ["Android"],
+        "operatingSystem": "Android",
+        "url": "https://play.google.com/store/apps/details?id=com.rick.thankanscardparty",
+        "description": "THANKANS: THE CARD PARTY is a vibrant multiplayer UNO-style card game by Rikson Roy featuring local hotspot play, online rooms, AI bots, and a ranked trophy system."
       },
       {
         "@type": "ImageGallery",
@@ -1390,6 +1406,14 @@
       background: var(--gradient-primary);
     }
 
+    .project-card:nth-child(4)::before {
+      background: var(--gradient-gold);
+    }
+
+    .project-card:nth-child(5)::before {
+      background: var(--gradient-sunrise);
+    }
+
     .project-icon {
       width: 52px;
       height: 52px;
@@ -1424,6 +1448,24 @@
 
     .project-card:nth-child(3):hover .project-icon {
       box-shadow: 0 8px 24px rgba(13, 110, 102, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .project-card:nth-child(4) .project-icon {
+      background: var(--gradient-gold);
+      box-shadow: 0 6px 18px rgba(184, 135, 42, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .project-card:nth-child(4):hover .project-icon {
+      box-shadow: 0 8px 24px rgba(184, 135, 42, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .project-card:nth-child(5) .project-icon {
+      background: var(--gradient-sunrise);
+      box-shadow: 0 6px 18px rgba(181, 65, 47, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .project-card:nth-child(5):hover .project-icon {
+      box-shadow: 0 8px 24px rgba(181, 65, 47, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
     }
 
     .project-card h3 {
@@ -1771,10 +1813,12 @@
       transition-delay: 200ms;
     }
 
+    .projects-grid .reveal:nth-child(4),
     .gallery-grid .reveal:nth-child(4) {
       transition-delay: 300ms;
     }
 
+    .projects-grid .reveal:nth-child(5),
     .gallery-grid .reveal:nth-child(5) {
       transition-delay: 400ms;
     }
@@ -1990,6 +2034,7 @@
     /* ── Game Tabs & Content Switcher ── */
     .game-tabs {
       display: flex;
+      flex-wrap: wrap;
       gap: 6px;
       margin-bottom: 36px;
       padding: 5px;
@@ -2072,40 +2117,6 @@
         transform: translateY(0);
       }
     }
-
-    .project-card:nth-child(4)::before {
-      background: var(--gradient-gold);
-    }
-
-    .project-card:nth-child(4) .project-icon {
-      background: var(--gradient-gold);
-      box-shadow: 0 6px 18px rgba(184, 135, 42, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    }
-
-    .project-card:nth-child(4):hover .project-icon {
-      box-shadow: 0 8px 24px rgba(184, 135, 42, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    }
-
-    .projects-grid .reveal:nth-child(4) {
-      transition-delay: 300ms;
-    }
-
-    @media (max-width: 760px) {
-      .game-tabs {
-        width: 100%;
-      }
-
-      .game-tab {
-        flex: 1;
-        justify-content: center;
-        padding: 11px 14px;
-        font-size: 0.84rem;
-      }
-
-      .projects-grid .reveal:nth-child(4) {
-        transition-delay: 0ms !important;
-      }
-    }
   </style>
 </head>
 
@@ -2185,11 +2196,11 @@
           </div>
           <div class="quick-stats" aria-label="Portfolio stats">
             <div class="stat-card">
-              <strong data-count="2">0</strong>
+              <strong data-count="3">0</strong>
               <span>Android games</span>
             </div>
             <div class="stat-card">
-              <strong data-count="4" data-suffix="+">0</strong>
+              <strong data-count="5" data-suffix="+">0</strong>
               <span>Projects</span>
             </div>
             <div class="stat-card">
@@ -2271,18 +2282,129 @@
         </div>
 
         <div class="game-tabs reveal">
-          <button class="game-tab active" data-game="poojyam-vettu" type="button">
+          <button class="game-tab active" data-game="card-party" type="button">
+            <i class="fa-solid fa-clone" aria-hidden="true"></i>
+            Thankans: The Card Party
+            <span class="new-badge">New</span>
+          </button>
+          <button class="game-tab" data-game="poojyam-vettu" type="button">
             <i class="fa-solid fa-border-all" aria-hidden="true"></i>
-            Thankans Poojyam Vettu
+           Thankans Poojyam Vettu
           </button>
           <button class="game-tab" data-game="sos" type="button">
             <i class="fa-solid fa-hashtag" aria-hidden="true"></i>
             Thankans SOS
-            <span class="new-badge">New</span>
           </button>
         </div>
 
-        <div class="game-content active" id="game-poojyam-vettu">
+        <div class="game-content active" id="game-card-party">
+          <div class="game-showcase">
+            <div class="game-media reveal">
+              <img src="assets/cardparty-home.jpg" alt="THANKANS: THE CARD PARTY game home screen" loading="lazy" />
+              <div class="game-media-label">
+                <strong>THANKANS</strong>
+                <span>THE CARD PARTY by Rikson Roy</span>
+              </div>
+            </div>
+
+            <article class="game-panel reveal">
+              <div>
+                <h3 class="game-title">The ultimate card party with a local twist.</h3>
+                <p class="game-description">
+                  THANKANS: THE CARD PARTY is a vibrant, color-matching, UNO-style card game. Empty your hand first to win, challenge smart AI opponents offline, connect via local hotspot, or join friends online. Climb the ranks and remember to call BOOM!
+                </p>
+
+                <div class="feature-grid" aria-label="Card Party game features">
+                  <div class="feature-item">
+                    <i class="fa-solid fa-wifi" aria-hidden="true"></i>
+                    <div>
+                      <strong>Multiplayer modes</strong>
+                      <span>Play offline, locally via hotspot, or join online rooms.</span>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fa-solid fa-robot" aria-hidden="true"></i>
+                    <div>
+                      <strong>Smart AI Bots</strong>
+                      <span>Challenge Thankan Ace, Blitz, and others in offline matches.</span>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fa-solid fa-trophy" aria-hidden="true"></i>
+                    <div>
+                      <strong>Trophy ranking</strong>
+                      <span>Earn trophies for winning and climb from Bronze to Champion.</span>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fa-solid fa-bomb" aria-hidden="true"></i>
+                    <div>
+                      <strong>BOOM mechanic</strong>
+                      <span>Tap BOOM before the timer runs out when holding 1 card!</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="detail-grid" aria-label="Card Party game details">
+                  <div class="detail-card">
+                    <span>Developer</span>
+                    <strong>Rikson Roy</strong>
+                  </div>
+                  <div class="detail-card">
+                    <span>Platform</span>
+                    <strong>Android</strong>
+                  </div>
+                  <div class="detail-card">
+                    <span>Genre</span>
+                    <strong>Card Game</strong>
+                  </div>
+                  <div class="detail-card">
+                    <span>Support email</span>
+                    <a href="mailto:riksonroy54@gmail.com">riksonroy54@gmail.com</a>
+                  </div>
+                  <div class="detail-card">
+                    <span>Content note</span>
+                    <strong>Family friendly</strong>
+                  </div>
+                  <div class="detail-card">
+                    <span>Developer page</span>
+                    <a href="https://play.google.com/store/apps/dev?id=8865657185045304173" target="_blank"
+                      rel="noopener">Google Play</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="button-row">
+                <a class="btn btn-primary"
+                  href="https://play.google.com/store/apps/details?id=com.rick.thankans_cards" target="_blank"
+                  rel="noopener">
+                  <i class="fa-brands fa-google-play" aria-hidden="true"></i>
+                  Open on Google Play
+                </a>
+                <a class="btn btn-ghost" href="#contact">
+                  <i class="fa-solid fa-headset" aria-hidden="true"></i>
+                  Contact Developer
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="screenshot-grid reveal" aria-label="Card Party game screenshots">
+            <figure>
+              <img src="assets/cardparty-intro.jpg" alt="THANKANS: THE CARD PARTY lobby screen" loading="lazy" />
+              <figcaption>Multiplayer Lobby</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/cardparty-gameplay.jpg" alt="THANKANS: THE CARD PARTY gameplay" loading="lazy" />
+              <figcaption>Gameplay</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/cardparty-winner.jpg" alt="THANKANS: THE CARD PARTY winner screen" loading="lazy" />
+              <figcaption>Victory Screen</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="game-content" id="game-poojyam-vettu">
         <div class="game-showcase">
           <div class="game-media reveal">
             <img src="assets/thankans-home.jpeg" alt="THANKANS POOJYAM VETTU game home screen" loading="eager" />
@@ -2501,6 +2623,7 @@
             </figure>
           </div>
         </div>
+        
       </div>
     </section>
 
@@ -2550,8 +2673,22 @@
 
           <article class="project-card reveal">
             <div>
+              <div class="project-icon"><i class="fa-solid fa-clone" aria-hidden="true"></i></div>
+              <h3>Thankans: The Card Party</h3>
+              <p>
+                A vibrant multiplayer UNO-style card game featuring local hotspot discovery, online rooms, smart AI opponents, and a competitive trophy ranking system.
+              </p>
+            </div>
+            <a class="btn btn-ghost" href="https://play.google.com/store/apps/details?id=com.rick.thankanscardparty"
+              target="_blank" rel="noopener">
+              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+              Play Game
+            </a>
+          </article>
+          <article class="project-card reveal">
+            <div>
               <div class="project-icon"><i class="fa-solid fa-border-all" aria-hidden="true"></i></div>
-              <h3>Poojyam Vettu</h3>
+              <h3>Thankans Poojyam Vettu</h3>
               <p>
                 The Thankans Poojyam Vett is the Dots and Boxes inspired game experience, connected to the Android game
                 showcase
@@ -2580,6 +2717,7 @@
               Play Game
             </a>
           </article>
+
         </div>
       </div>
     </section>
